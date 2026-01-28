@@ -267,9 +267,22 @@
                         <li><strong>Steps:</strong> How many times the AI "cleans" the noise. 20-30 is standard.</li>
                         <li><strong>CFG Scale:</strong> "Creativity vs. Obedience". Low (3-5) is creative, High (7-12)
                             follows your prompt strictly.</li>
+
+                        <!-- New Sampler Menu Section -->
+                        <li><strong>Samplers (The Menu):</strong> Think of them like "Flavors" of drawing:
+                            <ul>
+                                <li><strong>Euler / Euler a:</strong> The "Fast Food". Fast, reliable, standard choice.
+                                </li>
+                                <li><strong>DPM++ 2M Karras:</strong> The "Gourmet". High quality, sharp details (User
+                                    Favorite).</li>
+                                <li><strong>LCM:</strong> The "Speed Racer". Super fast (needs specific models).</li>
+                                <li><strong>Ancestral (has "a" in name):</strong> Adds random noise every step. Good for
+                                    creativity, but the image changes if you add steps.</li>
+                            </ul>
+                        </li>
+
                         <li><strong>Denoise:</strong> How much the AI changes the original. 1.0 = Complete Change, 0.1 =
                             Very Little Change. (This is "AI's Touch").</li>
-                        <li><strong>Samplers & Schedulers:</strong> (Euler a, Karras) - The "Flavor" of generation.</li>
                         <li><strong>Seed:</strong> The specific "Random Number" used. Saving it allows you to recreate
                             the exact same image.
                             <ul>
@@ -295,7 +308,19 @@
                     <ul>
                         <li><strong>Denoise (تقليل الضوضاء):</strong> مقدار تغيير الذكاء الاصطناعي للصورة الأصلية. 1.0 =
                             تغيير كامل، 0.1 = تغيير بسيط جداً. (هذه هي "لمسة الذكاء الاصطناعي").</li>
-                        <li><strong>Samplers & Schedulers:</strong> (مثل Euler a, Karras) - تحدد "نكهة" التوليد.</li>
+
+                        <!-- Arabic Sampler Menu -->
+                        <li><strong>Samplers (قائمة العينات):</strong> تخيلها مثل "نكهات" الرسم:
+                            <ul>
+                                <li><strong>Euler / Euler a:</strong> "الوجبة السريعة". سريع ومضمون. الخيار القياسي.
+                                </li>
+                                <li><strong>DPM++ 2M Karras:</strong> "المطعم الفاخر". جودة عالية وتفاصيل حادة (المفضل
+                                    لدى المحترفين).</li>
+                                <li><strong>Ancestral (يحتوي حرف "a"):</strong> يضيف عشوائية في كل خطوة. جيد للإبداع،
+                                    لكن الصورة تتغير إذا زدت الخطوات.</li>
+                            </ul>
+                        </li>
+
                         <li><strong>Seed (البذرة):</strong> الرقم العشوائي المستخدم. حفظه يسمح لك بإعادة إنتاج نفس
                             الصورة تماماً.
                             <ul>
@@ -550,6 +575,7 @@
         arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
         applyLanguageSettings();
     </script>
+    <script src="theme.js"></script>
 </body>
 
 </html>

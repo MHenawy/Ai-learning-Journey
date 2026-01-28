@@ -437,3 +437,27 @@ body.hide-en .card-title:not(.arabic-text) {
     /* Attempt to hide English titles */
     display: none !important;
 }
+[data-theme="dark"] {
+    --primary-color: #818cf8; /* Indigo 400 */
+    --primary-hover: #6366f1; /* Indigo 500 */
+    --secondary-color: #a78bfa; /* Violet 400 */
+    
+    --bg-main: #0f172a; /* Slate 900 */
+    --bg-card: #1e293b; /* Slate 800 */
+    --bg-card-hover: #334155; /* Slate 700 */
+    --bg-header: #020617; /* Slate 950 */
+    --bg-nav: rgba(15, 23, 42, 0.95);
+
+    --text-main: #f8fafc; /* Slate 50 */
+    --text-muted: #94a3b8; /* Slate 400 */
+    --border-color: #334155; /* Slate 700 */
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+
+    /* Info Box Defaults (Dark) */
+    --bg-info: #172554; /* Blue 950 */
+    --border-info: #1e40af; /* Blue 800 */
+    --text-info: #dbeafe; /* Blue 100 */
+}

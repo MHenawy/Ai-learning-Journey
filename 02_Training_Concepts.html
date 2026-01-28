@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Training Concepts - AI Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI Learning Journey</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="vocabulary.html">Vocabulary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>2. Training Concepts <span class="arabic-title">مفاهيم التدريب</span></h1>
+
+        <!-- How Computers Learn (Note System Style) -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">How Computers Learn</span>
+                <span class="card-title arabic-text">كيف تتعلم الحواسيب</span>
+            </div>
+            <div class="card-content">
+
+                <!-- English Section -->
+                <div class="lang-section en">
+                    <p><strong>Summary:</strong> Instead of coding rules manually, we feed the model data and let it
+                        find patterns through trial and error.</p>
+
+                    <div style="margin-top: 10px;">
+                        <strong>Key Concepts:</strong>
+                        <ul>
+                            <li><strong>Data vs Rules:</strong> Providing examples (images) instead of instructions.
+                            </li>
+                            <li><strong>Features:</strong> Finding patterns (ears, shapes) automatically.</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <strong>Example:</strong> Teaching a child to know a "Cat". You don't describe ears; you show 10
+                        photos of cats.
+                    </div>
+                </div>
+
+                <!-- Arabic Section -->
+                <div class="lang-section ar">
+                    <p><strong>الخلاصة:</strong> بدلاً من القواعد الصارمة، نعطي الموديل بيانات ونتركه يكتشف الأنماط
+                        بنفسه.</p>
+
+                    <div style="margin-top: 10px;">
+                        <strong>المفاهيم الأساسية:</strong>
+                        <ul>
+                            <li><strong>البيانات ضد القواعد:</strong> توفير أمثلة (صور) بدلاً من التعليمات البرمجية.
+                            </li>
+                            <li><strong>الملامح (Features):</strong> اكتشاف الأنماط (شكل الأذن، الألوان) تلقائياً.</li>
+                        </ul>
+                    </div>
+
+                    <div class="example-box">
+                        <strong>مثال:</strong> تعليم طفل شكل "القطة". أنت لا تصف له شكل الأذن، بل تريه 10 صور لقطط وتقول
+                        له "هذه قطة".
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-content">
+                    <div class="lang-section en">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h4>Epoch</h4>
+                                <p class="definition">One full pass reading the entire dataset.</p>
+                            </div>
+                            <div>
+                                <h4>Weights</h4>
+                                <p class="definition">The "Brain" numbers that get adjusted during learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lang-section ar">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h4>Epoch (دورة/حقبة)</h4>
+                                <p class="definition">مرور كامل واحد على جميع بيانات التدريب.</p>
+                            </div>
+                            <div>
+                                <h4>Weights (الأوزان)</h4>
+                                <p class="definition">الأرقام التي تمثل "عقل" الموديل ويتم تعديلها أثناء التعلم.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkpoints -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Checkpoints (Save Points)</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>A saved version of the model's weights at a specific step. It secures your long training
+                        progress.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>نسخة محفوظة من أوزان الموديل في لحظة معينة. هي طريقة لتأمين تقدمك في التدريب الطويل.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overfitting vs Underfitting -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Overfitting vs. Underfitting</span>
+            </div>
+            <div class="card-content">
+                <div class="card-content">
+                    <div class="lang-section en">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h4 style="color: #b91c1c;">Overfitting</h4>
+                                <p>Memorizing data. <br><strong>Symptom:</strong> Great on training data, fails on new
+                                    prompts.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #b45309;">Underfitting</h4>
+                                <p>Didn't learn anything. <br><strong>Symptom:</strong> Bad results everywhere.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lang-section ar">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h4 style="color: #b91c1c;">Overfitting (الحفظ الصم)</h4>
+                                <p>حفظ البيانات بدلاً من فهمها. <br><strong>العرض:</strong> ممتاز في التدريب، فاشل في أي
+                                    شيء جديد.</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #b45309;">Underfitting (ضعف التعلم)</h4>
+                                <p>لم يتعلم شيئاً. <br><strong>العرض:</strong> نتائج سيئة في كل مكان.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quantization (New) -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Quantization (Optimization)</span>
+                <span class="card-title arabic-text">الضغط (التكميم)</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>Reducing the precision of the numbers (Weights) to make the model smaller and faster.</p>
+                    <div class="example-box">
+                        <strong>FP32 (High Precision):</strong> 0.23749284 (Huge file)<br>
+                        <strong>INT8 (Quantized):</strong> 0.2 (Small, Fast)
+                    </div>
+                    <p>Allows running huge models on normal consumer GPUs.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>تقليل دقة الأرقام (الأوزان) لجعل الموديل أصغر وأسرع.</p>
+                    <p>يسمح بتشغيل موديلات ضخمة على أجهزة عادية.</p>
+                    <p><strong>GGUF:</strong> صيغة ملفات للموديلات المضغوطة (Quantized) لتعمل على المعالجات العادية
+                        (CPU/Mac).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="01_Introduction.html" class="btn-nav btn-prev">← Chapter 1</a>
+            <a href="03_Generative_AI.html" class="btn-nav btn-next">Chapter 3: Generative AI →</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

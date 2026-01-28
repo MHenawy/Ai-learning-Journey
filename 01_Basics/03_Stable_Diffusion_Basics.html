@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Stable Diffusion & Text Encoders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">AI Learning</a>
+            <div class="nav-links">
+                <a href="02_Training_Concepts.html">← Previous</a>
+                <a href="../vocabulary.html">Vocabulary</a>
+                <a href="../index.html">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1>
+                3. Stable Diffusion & Text Encoders
+                <span class="arabic-title">الانتشار المستقر ومشفرات النصوص</span>
+            </h1>
+            <p style="color: var(--text-muted);">Before we jump into ComfyUI, we must understand how AI "creates"
+                images.</p>
+        </div>
+
+        <!-- 1. What is Stable Diffusion? -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">1. What is Stable Diffusion?</span>
+                <span class="card-title arabic-text">ما هو Stable Diffusion؟</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>It's an AI model that turns <strong>Text into Images</strong>.</p>
+                    <p>It works by taking an image made of "Noise" (static like an old TV) and gradually refining it
+                        until it matches your description.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>هو موديل ذكاء اصطناعي يحول <strong>النصوص إلى صور</strong>.</p>
+                    <p>يعمل عن طريق أخذ صورة مكونة من "شوشرة" (Noise) وتحسينها تدريجياً حتى تتطابق مع وصفك.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. The Text Encoder (CLIP) -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">2. Text Encoder (The Translator)</span>
+                <span class="card-title arabic-text">مشفر النصوص (المترجم)</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>Computers don't understand English or Arabic. They only understand numbers.</p>
+                    <p><strong>CLIP (Contrastive Language-Image Pre-training)</strong> is the "Translator". changing
+                        your text prompt into a list of numbers (vectors) that the AI can understand.</p>
+                    <div class="example-box">
+                        Prompt: "A cute cat" <br>
+                        ⬇ CLIP ⬇ <br>
+                        Computer sees: [0.42, -1.2, 0.99, ...]
+                    </div>
+                </div>
+                <div class="lang-section ar">
+                    <p>الحواسيب لا تفهم الإنجليزية أو العربية. هي تفهم الأرقام فقط.</p>
+                    <p><strong>CLIP</strong> هو "المترجم". يقوم بتحويل النص الذي كتبته إلى قائمة من الأرقام (متجهات)
+                        يستطيع الذكاء الاصطناعي فهمها.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. The Latent Space -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">3. The Latent Space (Compressed World)</span>
+                <span class="card-title arabic-text">الفضاء الكامن</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>Instead of working with huge image files directly (which is slow), Stable Diffusion works in a
+                        <strong>compressed space</strong> called "Latent Space".
+                    </p>
+                    <p>It creates the image in this small space first, then "decodes" it into a full-size picture at the
+                        very end.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>بدلاً من العمل على ملفات الصور الضخمة مباشرة (وهو بطيء)، يعمل Stable Diffusion في <strong>فضاء
+                            مضغوط</strong> يسمى "Latent Space".</p>
+                    <p>يقوم بإنشاء الصورة في هذا الفضاء الصغير أولاً، ثم يقوم "بفك تشفيرها" إلى صورة كاملة الحجم في
+                        النهاية.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. VAE (Variational Auto Encoder) -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">4. VAE (Variational Auto Encoder)</span>
+                <span class="card-title arabic-text">المشفّر التلقائي المتغير</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>The <strong>VAE</strong> is the tool responsible for moving images in and out of the Latent
+                        Space.</p>
+                    <ul>
+                        <li><strong>Encoder:</strong> Compresses a big image into the small Latent Space.</li>
+                        <li><strong>Decoder:</strong> Unpacks the small latent image back into a normal picture.</li>
+                    </ul>
+                    <div class="example-box">
+                        <strong>Analogy:</strong> The VAE is like a detailed <strong>ZIP file</strong> tool that shrinks
+                        the image and expands it later.
+                    </div>
+                </div>
+                <div class="lang-section ar">
+                    <p>الـ <strong>VAE</strong> هو الأداة المسؤولة عن نقل الصور من وإلى الفضاء الكامن (Latent Space).
+                    </p>
+                    <ul>
+                        <li><strong>Encoder (المشفّر):</strong> يضغط الصورة الكبيرة ويدخلها في الفضاء الكامن.</li>
+                        <li><strong>Decoder (فاك التشفير):</strong> يخرج الصورة من الفضاء الكامن ويعيدها لحجمها الطبيعي.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. K-Sampler (Key Sampler) -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">5. K-Sampler (The Artist)</span>
+                <span class="card-title arabic-text">المعيّن (الرسام)</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>The <strong>Sampler</strong> is the engine that actually "draws" the image. It takes the noisy
+                        latent image and the text instructions (Embeddings) and removes the noise step-by-step.</p>
+                    <p><strong>Steps:</strong> How many times the sampler cleans the image (e.g., 20 steps).</p>
+                    <p>Common Samplers: <em>Euler a, DPM++ 2M Karras</em>.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p><strong>الـ Sampler</strong> هو المحرك الذي يقوم فعلياً برسم الصورة. يأخذ الصورة المشوشة
+                        والتعليمات النصية (Embeddings) ويقوم بإزالة الشوشرة خطوة بخطوة.</p>
+                    <p><strong>Steps (الخطوات):</strong> عدد المرات التي يقوم فيها الـ Sampler بتنظيف الصورة (مثال: 20
+                        خطوة).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="page-nav">
+            <a href="02_Training_Concepts.html" class="btn">← Previous Chapter</a>
+            <a href="../index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

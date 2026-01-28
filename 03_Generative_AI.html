@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Generative AI - AI Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI Learning Journey</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="vocabulary.html">Vocabulary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>3. Generative AI & ComfyUI <span class="arabic-title">الذكاء الاصطناعي التوليدي</span></h1>
+
+        <!-- What Can ComfyUI Do? (Note System Style) -->
+        <div class="card" style="border-left: 5px solid #8b5cf6;">
+            <div class="card-header">
+                <span class="card-title">What Can ComfyUI Do?</span>
+                <span class="card-title arabic-text">ماذا يفعل ComfyUI؟</span>
+            </div>
+            <div class="card-content">
+
+                <!-- English Section -->
+                <div class="lang-section en">
+                    <div class="note-summary">
+                        <strong>Summary:</strong> ComfyUI is the <strong>Engine Interface</strong>. It lets you connect
+                        different AI models like lego blocks to process diverse media.
+                    </div>
+
+                    <div class="note-concepts">
+                        <h4>Capabilities:</h4>
+                        <ul>
+                            <li><strong>Images 🖼️:</strong> Text-to-Image, Image-to-Image, Inpainting (Editing).</li>
+                            <li><strong>Videos 🎥:</strong> AnimateDiff, Video-to-Video transfer.</li>
+                            <li><strong>Audio 🎵:</strong> Audio-Reactive (Sound visualizing), TTS (Text-to-Speech).
+                            </li>
+                            <li><strong>Models 🧠:</strong> Runs Checkpoints (SD1.5, SDXL), LoRAs, and ControlNets.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Arabic Section -->
+                <div class="lang-section ar">
+                    <div class="note-summary">
+                        <strong>الخلاصة:</strong> هو واجهة المحرك. يتيح لك ربط موديلات الذكاء الاصطناعي مثل مكعبات
+                        الليجو لمعالجة وسائط متعددة.
+                    </div>
+
+                    <div class="note-concepts">
+                        <h4>القدرات:</h4>
+                        <ul>
+                            <li><strong>صور 🖼️:</strong> تحويل النص لصورة، تعديل الصور (Inpainting).</li>
+                            <li><strong>فيديو 🎥:</strong> تحريك الصور (AnimateDiff) أو تغيير ستايل الفيديو.</li>
+                            <li><strong>صوت 🎵:</strong> تفاعل الصور مع الصوت (Audio Reactive).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Transformers -->
+        <section id="transformers">
+            <h2>The Transformer Revolution <span class="arabic-title" style="font-size: 0.7em;">ثورة المحولات</span>
+            </h2>
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">What is a Transformer? (2017)</span>
+                </div>
+                <div class="card-content">
+                    <div class="lang-section en">
+                        <p>Before 2017, AI read text word-by-word (slow). The <strong>Transformer</strong> reads the
+                            <strong>entire sentence at once</strong>.
+                        </p>
+                        <p>It uses <strong>Self-Attention</strong> to understand context. In "The cat sat on the mat",
+                            the word "cat" looks at "sat" and "mat" to understand what's happening.</p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p>قبل 2017، كان الذكاء الاصطناعي يقرأ كلمة كلمة. <strong>Transformer</strong> يقرأ
+                            <strong>الجملة كاملة في نفس الوقت</strong>.
+                        </p>
+                        <p>يستخدم <strong>Self-Attention</strong> لفهم السياق.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stable Diffusion Architecture -->
+        <section id="sd-arch">
+            <h2>Stable Diffusion Architecture <span class="arabic-title" style="font-size: 0.7em;">هيكلية الانتشار
+                    المستقر</span></h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">The 3 Main Parts</span>
+                </div>
+                <div class="card-content">
+                    <div class="lang-section en">
+                        <ol style="margin-left: 20px; line-height: 1.8;">
+                            <li><strong>Text Encoder (CLIP):</strong> The "Translator". Converts your text prompt into
+                                numbers (Embeddings).</li>
+                            <li><strong>U-Net (The Denoiser):</strong> The "Artist". Takes noise + your prompt and
+                                predicts what the image should look like without noise.</li>
+                            <li><strong>VAE (The Codec):</strong> The "Compressor". Moves images between Pixel Space and
+                                Latent Space.</li>
+                        </ol>
+                    </div>
+                    <div class="lang-section ar">
+                        <ol style="margin-left: 20px; line-height: 1.8;">
+                            <li><strong>Text Encoder (CLIP):</strong> المترجم. يحول النص إلى أرقام (Embeddings) يفهمها
+                                الموديل.</li>
+                            <li><strong>U-Net (الفنان):</strong> هو محرك الرسم. يأخذ التشويش + كلامك ويتوقع شكل الصورة
+                                الصافية.</li>
+                            <li><strong>VAE (الضاغط):</strong> يحول الصور بين صيغة البكسل (الكبيرة) وصيغة الفضاء الكامن
+                                (المضغوطة).</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latent vs Pixel Space -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Latent Space vs. Pixel Space</span>
+                    <span class="card-title arabic-text">الفضاء الكامن vs البكسل</span>
+                </div>
+                <div class="card-content">
+                    <div class="example-box">
+                        <strong>The Analogy:</strong><br>
+                        <strong>Pixel Space:</strong> Sending a 4K video of you cooking (Huge data, slow).<br>
+                        <strong>Latent Space:</strong> Sending the written <em>Recipe</em> (Tiny data, fast, contains
+                        the "essence").
+                    </div>
+                    <div class="lang-section ar">
+                        <p><strong>Pixel Space:</strong> هو الصورة الكاملة (بطيء). <strong>Latent Space:</strong> هو
+                            "جوهر" الصورة المضغوط (سريع).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ControlNet & LoRA -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Add-ons: LoRA & ControlNet</span>
+                </div>
+                <div class="card-content">
+                    <div class="lang-section en">
+                        <p><strong>LoRA:</strong> A mini-model to teach a specific style/face (plug-in).</p>
+                        <p><strong>ControlNet:</strong> Controls the structure (pose, outline) of the generation.</p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p><strong>LoRA:</strong> موديل صغير إضافي لتعليم ستايل معين أو وجه شخص (Plug-in).</p>
+                        <p><strong>ControlNet:</strong> شبكة للتحكم في هيكل الصورة (مثل الوضعية Pose أو الحدود
+                            الخارجية).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="02_Training_Concepts.html" class="btn-nav btn-prev">← Chapter 2</a>
+            <a href="04_ComfyUI.html" class="btn-nav btn-next">Chapter 4: ComfyUI →</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

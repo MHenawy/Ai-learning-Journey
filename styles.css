@@ -1,0 +1,330 @@
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #818cf8;
+    --background-color: #f8fafc;
+    --surface-color: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: block;
+    /* Reverted from flex */
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+    color: var(--text-main);
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.arabic-text {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+}
+
+.arabic-title {
+    display: inline-block;
+    font-size: 0.7em;
+    color: var(--text-muted);
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+/* Cards */
+.card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.card-header {
+    background-color: #f1f5f9;
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lang-section {
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.lang-section.en {
+    border-left: 3px solid var(--primary-color);
+    background: #f8fafc;
+}
+
+.lang-section.ar {
+    border-right: 3px solid var(--secondary-color);
+    background: #fff;
+    text-align: right;
+}
+
+.highlight {
+    background-color: #fef08a;
+    padding: 0 4px;
+    border-radius: 2px;
+}
+
+.example-box {
+    background-color: #eff6ff;
+    border: 1px dashed #60a5fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-family: monospace;
+    color: #1e40af;
+}
+
+/* Vocabulary Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    /* Restored blue header */
+    color: white;
+    font-weight: 600;
+}
+
+th.ar,
+td.ar-meaning {
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+}
+
+.term {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Helper Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+/* Note-Taking System Styles */
+.note-section {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.note-summary {
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.note-concepts {
+    margin-bottom: 15px;
+}
+
+.note-concepts ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.note-concepts li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+.note-concepts li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 5px;
+    font-size: 1.2em;
+}
+
+.note-example {
+    background-color: #eff6ff;
+    border-left: 4px solid #60a5fa;
+    padding: 15px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 15px;
+}
+
+.note-terms {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.9em;
+}
+
+.highlight-term {
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Navigation Buttons (Multi-Page) */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-nav {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-next {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: auto;
+    /* Push to right if alone */
+}
+
+.btn-prev {
+    background-color: #f1f5f9;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.btn-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

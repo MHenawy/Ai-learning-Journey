@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Introduction - AI Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI Learning Journey</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="vocabulary.html">Vocabulary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>1. Introduction to AI <span class="arabic-title">مقدمة</span></h1>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">AI vs Machine Learning vs Deep Learning</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p><strong>AI:</strong> The big umbrella. Any machine acting smart.</p>
+                    <p><strong>Machine Learning (ML):</strong> Manual feature extraction. Good for simple data.</p>
+                    <p><strong>Deep Learning (DL):</strong> Automatic feature extraction using <strong>Neural
+                            Networks</strong>. Essential for images/video.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inference vs Training -->
+        <div class="card" style="border-left: 5px solid var(--secondary-color);">
+            <div class="card-header">
+                <span class="card-title">Crucial Concept: Inference vs. Training</span>
+                <span class="card-title arabic-text">الاستنتاج مقابل التدريب</span>
+            </div>
+            <div class="card-content">
+                <div class="card-content">
+                    <!-- English -->
+                    <div class="lang-section en">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h4>Training (Learning)</h4>
+                                <p class="definition">Teaching the model new information (e.g., your face).</p>
+                                <ul>
+                                    <li>Requires heavy GPU (VRAM).</li>
+                                    <li>Takes hours/days.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Inference (Using)</h4>
+                                <p class="definition">Using a ready model to generate images.</p>
+                                <ul>
+                                    <li>99% of what you do in ComfyUI.</li>
+                                    <li>Fast and lighter.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Arabic -->
+                    <div class="lang-section ar">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <h4>Training (التدريب)</h4>
+                                <p class="definition">تعليم الموديل معلومات جديدة (مثل وجهك).</p>
+                                <ul>
+                                    <li>يحتاج كارت شاشة قوي (VRAM).</li>
+                                    <li>يستغرق ساعات أو أيام.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Inference (الاستنتاج)</h4>
+                                <p class="definition">استخدام موديل جاهز لتوليد الصور.</p>
+                                <ul>
+                                    <li>99% من عملك داخل ComfyUI.</li>
+                                    <li>سريع وخفيف على الجهاز.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="index.html" class="btn-nav btn-prev">← Home</a>
+            <a href="02_Training_Concepts.html" class="btn-nav btn-next">Chapter 2: Training →</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

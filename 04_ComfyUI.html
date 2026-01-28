@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: ComfyUI - AI Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI Learning Journey</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="vocabulary.html">Vocabulary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>4. Introduction to ComfyUI <span class="arabic-title">مقدمة في ComfyUI</span></h1>
+
+        <!-- What Can ComfyUI Do? (Note System Style) -->
+        <div class="card" style="border-left: 5px solid #8b5cf6;">
+            <div class="card-header">
+                <span class="card-title">What Can ComfyUI Do?</span>
+                <span class="card-title arabic-text">ماذا يفعل ComfyUI؟</span>
+            </div>
+            <div class="card-content">
+
+                <!-- English Section -->
+                <div class="lang-section en">
+                    <div class="note-summary">
+                        <strong>Summary:</strong> ComfyUI is the <strong>Engine Interface</strong>. It lets you connect
+                        different AI models like lego blocks to process diverse media.
+                    </div>
+
+                    <div class="note-concepts">
+                        <h4>Capabilities:</h4>
+                        <ul>
+                            <li><strong>Images 🖼️:</strong> Text-to-Image, Image-to-Image, Inpainting (Editing).</li>
+                            <li><strong>Videos 🎥:</strong> AnimateDiff, Video-to-Video transfer.</li>
+                            <li><strong>Audio 🎵:</strong> Audio-Reactive (Sound visualizing), TTS (Text-to-Speech).
+                            </li>
+                            <li><strong>Models 🧠:</strong> Runs Checkpoints (SD1.5, SDXL), LoRAs, and ControlNets.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Arabic Section -->
+                <div class="lang-section ar">
+                    <div class="note-summary">
+                        <strong>الخلاصة:</strong> هو واجهة المحرك. يتيح لك ربط موديلات الذكاء الاصطناعي مثل مكعبات
+                        الليجو لمعالجة وسائط متعددة.
+                    </div>
+
+                    <div class="note-concepts">
+                        <h4>القدرات:</h4>
+                        <ul>
+                            <li><strong>صور 🖼️:</strong> تحويل النص لصورة، تعديل الصور (Inpainting).</li>
+                            <li><strong>فيديو 🎥:</strong> تحريك الصور (AnimateDiff) أو تغيير ستايل الفيديو.</li>
+                            <li><strong>صوت 🎵:</strong> تفاعل الصور مع الصوت (Audio Reactive).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Why Nodes?</span>
+                <span class="card-title arabic-text">لماذا نظام العقد؟</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>Instead of simple "Click & Generate", Nodes give you <strong>Full Control</strong>. You can see
+                        exactly how the image travels from the Model -> to the Sampler -> to the Image.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>بدلاً من مجرد "اضغط وانتظر"، نظام العقد (Nodes) يعطيك <strong>تحكماً كاملاً</strong>. يمكنك رؤية
+                        كيف تنتقل الصورة من الموديل -> إلى الـ Sampler -> لتصبح صورة نهائية.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggested New Data (Dismissible) -->
+        <div id="suggestion-card" class="card"
+            style="border: 2px dashed #f59e0b; background-color: #fffbeb; position: relative;">
+            <button onclick="document.getElementById('suggestion-card').style.display='none'"
+                style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2em; color: #b45309;"
+                title="Dismiss">
+                ✖
+            </button>
+            <div class="card-header" style="background: none; border-bottom: 2px dashed #fcd34d;">
+                <span class="card-title" style="color: #b45309;">🚀 Suggested Next Topics</span>
+                <span class="card-title arabic-text" style="color: #b45309;">مواضيع مقترحة</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>To master ComfyUI, you should look into these next:</p>
+                    <ul>
+                        <li><strong>Samplers & Schedulers:</strong> (Euler a, Karras) - The "Flavor" of generation.</li>
+                        <li><strong>Seed:</strong> The specific "Random Number" used. Saving it allows you to recreate
+                            the exact same image.</li>
+                        <li><strong>Workflows (.json):</strong> ComfyUI saves your entire setup as a JSON file. easy to
+                            share.</li>
+                    </ul>
+                </div>
+                <div class="lang-section ar">
+                    <p>لاحتراف ComfyUI، تحقق من هذه المواضيع تالياً:</p>
+                    <ul>
+                        <li><strong>Samplers & Schedulers:</strong> (مثل Euler a, Karras) - تحدد "نكهة" التوليد.</li>
+                        <li><strong>Seed (البذرة):</strong> الرقم العشوائي المستخدم. حفظه يسمح لك بإعادة إنتاج نفس
+                            الصورة تماماً.</li>
+                        <li><strong>Workflows:</strong> يحفظ ComfyUI ترتيب العقد (Nodes) كملف JSON ليسهل مشاركته.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hardware Note -->
+        <div class="card" style="border-left: 5px solid #10b981;">
+            <div class="card-header">
+                <span class="card-title">Hardware Recommendation</span>
+                <span class="card-title arabic-text">توصيات العتاد</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p><strong>Windows + NVIDIA is King:</strong> The best experience is on <strong>Windows</strong>
+                        with an <strong>NVIDIA GPU</strong>.</p>
+                    <p>Why NVIDIA? Because of <strong>CUDA Cores</strong>. Almost all AI tools are built for CUDA first.
+                    </p>
+                    <p>Mac and AMD work, but are often slower or harder to set up.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p><strong>Windows + NVIDIA هي الأفضل:</strong> أفضل تجربة تكون على نظام <strong>Windows</strong> مع
+                        كارت شاشة <strong>NVIDIA</strong>.</p>
+                    <p>لماذا NVIDIA؟ بسبب أنوية <strong>CUDA</strong>. تقريباً كل أدوات الذكاء الاصطناعي مبنية لها.</p>
+                    <p>أجهزة Mac و AMD تعمل، لكنها غالباً أبطأ أو أصعب في الإعداد.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="03_Generative_AI.html" class="btn-nav btn-prev">← Chapter 3</a>
+            <a href="vocabulary.html" class="btn-nav btn-next"
+                style="background-color: var(--secondary-color);">Vocabulary →</a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

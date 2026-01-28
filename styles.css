@@ -257,13 +257,15 @@ h1 .arabic-title {
 
 /* Definition/Example Box */
 .example-box {
-    background-color: rgba(30, 41, 59, 0.5);
-    border: 1px solid var(--border-color);
+    background-color: #eff6ff;
+    /* Light Blue Background */
+    border: 1px solid #bfdbfe;
     border-left: 4px solid var(--secondary-color);
     padding: 15px;
     border-radius: 6px;
     margin-top: 15px;
-    color: var(--text-muted);
+    color: #1e3a8a;
+    /* Dark Blue Text for Contrast */
 }
 
 .ar .example-box {
@@ -272,8 +274,10 @@ h1 .arabic-title {
 }
 
 .definition {
-    color: var(--text-muted);
-    font-size: 0.95em;
+    color: #1e40af;
+    /* Explicit Dark Blue for headers */
+    font-size: 1.05em;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 

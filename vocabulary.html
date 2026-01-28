@@ -109,9 +109,10 @@
                     <td class="definition">The noise-removing engine (The actual "Diffusion" part).</td>
                 </tr>
                 <tr>
-                    <td class="term">VAE</td>
-                    <td class="ar-meaning">المشفّر التلقائي</td>
-                    <td class="definition">Compressor/Decompressor (Pixel Space <-> Latent Space).</td>
+                    <td class="term">VAE (Variational Autoencoder)</td>
+                    <td class="ar-meaning">المشفّر التلقائي (VAE)</td>
+                    <td class="definition">The "Translator". Turns the compressed "Latent" noise back into a normal
+                        visible image (Pixels).</td>
                 </tr>
                 <tr>
                     <td class="term">Latent Space</td>
@@ -126,8 +127,15 @@
                 <tr>
                     <td class="term">Checkpoints</td>
                     <td class="ar-meaning">نقاط الحفظ / الموديل</td>
-                    <td class="definition">Saved model states (SafeTensors). The main file containing the trained brain.
+                    <td class="definition">Saved model states (SafeTensors). Usually contains Model + CLIP + VAE
+                        (Baked).
                     </td>
+                </tr>
+                <tr>
+                    <td class="term">Baked VAE</td>
+                    <td class="ar-meaning">VAE مدمج</td>
+                    <td class="definition">When the VAE is already inside the Checkpoint (No red wire needed). Diffusion
+                        Models (UNETs) often don't have this.</td>
                 </tr>
                 <tr>
                     <td class="term">LoRA</td>

@@ -150,6 +150,8 @@ h1 .arabic-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
+    /* Added gap to prevent collision */
 }
 
 .card-title {

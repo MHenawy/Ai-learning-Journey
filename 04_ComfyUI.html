@@ -102,256 +102,394 @@
             </div>
         </div>
 
-        <!-- Suggested New Data (Dismissible) -->
-        <div id="suggestion-card" class="card"
-            style="border: 2px dashed #f59e0b; background-color: #fffbeb; position: relative;">
-            <button onclick="document.getElementById('suggestion-card').style.display='none'"
-                style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2em; color: #b45309;"
-                title="Dismiss">
-                ✖
-            </button>
-            <div class="card-header" style="background: none; border-bottom: 2px dashed #fcd34d;">
-                <span class="card-title" style="color: #b45309;">🚀 Suggested Next Topics</span>
-                <span class="card-title arabic-text" style="color: #b45309;">مواضيع مقترحة</span>
-            </div>
-            <div class="card-content">
-                <div class="lang-section en">
-                    <p>To master ComfyUI, you should look into these next:</p>
-                    <ul>
-                        <li><strong>Samplers & Schedulers:</strong> (Euler a, Karras) - The "Flavor" of generation.</li>
-                        <li><strong>Seed:</strong> The specific "Random Number" used. Saving it allows you to recreate
-                            the exact same image.</li>
-                        <li><strong>Workflows (.json):</strong> ComfyUI saves your entire setup as a JSON file. easy to
-                            share.</li>
-                    </ul>
-                </div>
-                <div class="lang-section ar">
-                    <p>لاحتراف ComfyUI، تحقق من هذه المواضيع تالياً:</p>
-                    <ul>
-                        <li><strong>Samplers & Schedulers:</strong> (مثل Euler a, Karras) - تحدد "نكهة" التوليد.</li>
-                        <li><strong>Seed (البذرة):</strong> الرقم العشوائي المستخدم. حفظه يسمح لك بإعادة إنتاج نفس
-                            الصورة تماماً.</li>
-                        <li><strong>Workflows:</strong> يحفظ ComfyUI ترتيب العقد (Nodes) كملف JSON ليسهل مشاركته.</li>
-                    </ul>
-                </div>
-            </div>
+    </div>
+
+    <!-- The Core Nodes (New Section) -->
+    <div class="card" style="border-left: 5px solid #22c55e;">
+        <div class="card-header">
+            <span class="card-title">The Core Team: Basic Nodes 🧩</span>
+            <span class="card-title arabic-text">الفريق الأساسي: العقد المهمة</span>
         </div>
+        <div class="card-content">
 
-        <!-- Running and Maintenance (New Section) -->
-        <div class="card" style="border-left: 5px solid #ef4444;">
-            <div class="card-header">
-                <span class="card-title">Running & Maintenance ⚠️</span>
-                <span class="card-title arabic-text">التشغيل والصيانة</span>
-            </div>
-            <div class="card-content">
+            <!-- Input / Output Concept -->
+            <div class="example-box">
+                <div class="definition">
+                    <strong>1. Inputs & Outputs (Wiring)</strong> <span style="float:right">المداخل والمخارج
+                        (الأسلاك)</span>
+                </div>
                 <div class="lang-section en">
-                    <ul>
-                        <li><strong>The Black Window (Console):</strong> When you run ComfyUI, a black window opens.
-                            <strong>DO NOT CLOSE IT!</strong> If you close it, the server stops.
-                        </li>
-                        <li><strong>Updating:</strong> To update, look for the <code>update_comfyui</code> script in
-                            your folder and run it.</li>
-                        <li><strong>Important Folders:</strong>
-                            <ul>
-                                <li><code>custom_nodes</code>: Where you install add-ons (Manager, ControlNet).</li>
-                                <li><code>input</code>: Put your images here for "Image-to-Image" tasks.</li>
-                                <li><code>output</code>: Where your generated images are saved.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="lang-section ar">
-                    <ul>
-                        <li><strong>الشاشة السوداء (الكونسول):</strong> عند تشغيل البرنامج، تظهر نافذة سوداء. <strong>لا
-                                تغلقها!</strong> إغلاقها يوقف البرنامج فوراً.</li>
-                        <li><strong>التحديث:</strong> لتحديث البرنامج، ابحث عن ملف <code>update_comfyui</code> في المجلد
-                            وشغله.</li>
-                        <li><strong>مجلدات مهمة:</strong>
-                            <ul>
-                                <li><code>custom_nodes</code>: لتثبيت الإضافات (مثل Manager).</li>
-                                <li><code>input</code>: ضع صورك هنا إذا أردت تعديلها (Image-to-Image).</li>
-                                <li><code>output</code>: المكان الذي تحفظ فيه صورك النهائية.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Folder Structure Explained -->
-        <div class="card" style="border-left: 5px solid #3b82f6;">
-            <div class="card-header">
-                <span class="card-title">Folder Structure Explained 📂</span>
-                <span class="card-title arabic-text">شرح المجلدات بالتفصيل</span>
-            </div>
-            <div class="card-content">
-                <div class="lang-section en">
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr style="border-bottom: 1px solid var(--border-color);">
-                            <th style="padding: 10px;">Folder 📁</th>
-                            <th style="padding: 10px;">Function 🔧</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>custom_nodes</strong></td>
-                            <td style="padding: 10px;">The "Plugins" folder. Install ComfyUI-Manager, ControlNet, and
-                                other addons here.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>input</strong></td>
-                            <td style="padding: 10px;">Drag & Drop your source images here (for Image-to-Image or
-                                Inpainting).</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>output</strong></td>
-                            <td style="padding: 10px;">Your final masterpieces appear here! (Images & Videos).</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>models</strong></td>
-                            <td style="padding: 10px;">The most important one. Put Checkpoints, LoRAs, and VAEs inside
-                                their specific subfolders here.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>temp</strong></td>
-                            <td style="padding: 10px;">Temporary preview images. Safe to ignore or clean up.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>user</strong></td>
-                            <td style="padding: 10px;">Saves your personal settings and configurations.</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="lang-section ar">
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <tr style="border-bottom: 1px solid var(--border-color);">
-                            <th style="padding: 10px; text-align: right;">المجلد 📁</th>
-                            <th style="padding: 10px; text-align: right;">الوظيفة 🔧</th>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>custom_nodes</strong></td>
-                            <td style="padding: 10px;">مجلد "الإضافات". هنا نضع ComfyUI-Manager و ControlNet وغيرها.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>input</strong></td>
-                            <td style="padding: 10px;">ضع صورك المصدرية هنا (لاستخدامها في تعديل الصور Image-to-Image).
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>output</strong></td>
-                            <td style="padding: 10px;">هنا تظهر نتائجك النهائية! (الصور والفيديوهات).</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>models</strong></td>
-                            <td style="padding: 10px;">الأهم على الإطلاق. نضع ملفات Checkpoints و LoRAs و VAE داخل
-                                مجلداتها الفرعية هنا.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>temp</strong></td>
-                            <td style="padding: 10px;">ملفات مؤقتة للمعاينة. يمكن تجاهلها.</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px;"><strong>user</strong></td>
-                            <td style="padding: 10px;">يحفظ إعداداتك الشخصية وتفضيلاتك.</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <!-- Shortcuts Tip -->
-                <div class="example-box" style="background-color: #f0fdf4; border-color: #86efac; color: #166534;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-                        <span style="font-size: 1.5em;">💡</span>
-                        <div>
-                            <strong>Workflow Tip: Use Shortcuts!</strong> <span style="float:right">نصيحة عمل: استخدم
-                                الاختصارات!</span>
-                        </div>
-                    </div>
-                    <div class="lang-section en">
-                        <p style="margin: 0;">Don't dig through 10 folders every time! Right-click the
-                            <code>input</code>, <code>output</code>, and <code>models</code> folders -> <strong>Send to
-                                Desktop (create shortcut)</strong>. Organize them in one place for easy access.
-                        </p>
-                    </div>
-                    <div class="lang-section ar">
-                        <p style="margin: 0;">لا تضيع وقتك في فتح المجلدات كل مرة! اضغط بزر الفأرة الأيمن على مجلدات
-                            <code>input</code> و <code>output</code> -> واختر <strong>Send to Desktop</strong>. ضع
-                            الاختصارات في مكان واحد لسهولة الوصول.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Hardware Note -->
-        <div class="card" style="border-left: 5px solid #10b981;">
-            <div class="card-header">
-                <span class="card-title">Hardware Recommendation</span>
-                <span class="card-title arabic-text">توصيات العتاد</span>
-            </div>
-            <div class="card-content">
-                <div class="lang-section en">
-                    <p><strong>Windows + NVIDIA is King:</strong> The best experience is on <strong>Windows</strong>
-                        with an <strong>NVIDIA GPU</strong>.</p>
-                    <p>Why NVIDIA? Because of <strong>CUDA Cores</strong>. Almost all AI tools are built for CUDA first.
+                    <p>Every node has Dots. <span style="color:#ef4444;">●</span> <span style="color:#3b82f6;">●</span>
+                        <span style="color:#f59e0b;">●</span>
                     </p>
-                    <p>Mac and AMD work, but are often slower or harder to set up.</p>
+                    <p><strong>Rule:</strong> You can only connect dots of the same color/type!</p>
+                    <ul>
+                        <li><strong>Model (Purple):</strong> The Brain. Connects Checkpoint -> Sampler.</li>
+                        <li><strong>CLIP (Yellow):</strong> The Translator. Connects Checkpoint -> Text Encode.</li>
+                        <li><strong>VAE (Red):</strong> The Decoder. Connects Checkpoint -> Image Decode.</li>
+                    </ul>
                 </div>
                 <div class="lang-section ar">
-                    <p><strong>Windows + NVIDIA هي الأفضل:</strong> أفضل تجربة تكون على نظام <strong>Windows</strong> مع
-                        كارت شاشة <strong>NVIDIA</strong>.</p>
-                    <p>لماذا NVIDIA؟ بسبب أنوية <strong>CUDA</strong>. تقريباً كل أدوات الذكاء الاصطناعي مبنية لها.</p>
-                    <p>أجهزة Mac و AMD تعمل، لكنها غالباً أبطأ أو أصعب في الإعداد.</p>
+                    <p>كل عقدة تحتوي على نقاط توصيل. <span style="color:#ef4444;">●</span> <span
+                            style="color:#3b82f6;">●</span> <span style="color:#f59e0b;">●</span></p>
+                    <p><strong>قاعدة:</strong> يمكنك فقط توصيل النقاط من نفس اللون/النوع!</p>
+                    <ul>
+                        <li><strong>Model (بنفسجي):</strong> العقل. يربط بين Checkpoint -> Sampler.</li>
+                        <li><strong>CLIP (أصفر):</strong> المترجم. يربط بين Checkpoint -> Text Encode.</li>
+                        <li><strong>VAE (أحمر):</strong> المترجم البصري. يربط بين Checkpoint -> Image Decode.</li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- My Public Notes (Instructor Tips) -->
-        <div class="card" style="border-left: 5px solid #f59e0b;">
-            <div class="card-header">
-                <span class="card-title">My Personal Notes 📝</span>
-                <span class="card-title arabic-text">ملاحظاتي الشخصية</span>
-            </div>
-            <div class="card-content">
+            <!-- CLIP Text Encode -->
+            <div class="example-box">
+                <div class="definition">
+                    <strong>2. CLIP Text Encode</strong> <span style="float:right">صندوق الكتابة (Prompt)</span>
+                </div>
                 <div class="lang-section en">
-                    <p><strong>Tip 1:</strong> Always check the console if generation fails!</p>
-                    <p><strong>Tip 2:</strong> Start with small images (512x512) to test, then upscale.</p>
-                    <p><strong>Tip 3:</strong> <strong>ComfyUI Manager</strong> is essential! Install it by running `git
-                        clone` inside the `custom_nodes` folder.</p>
+                    <p>This is where you type what you want.</p>
+                    <ul>
+                        <li><strong>Positive Node:</strong> Connects to <strong>positive</strong> input of KSampler
+                            (What you want).</li>
+                        <li><strong>Negative Node:</strong> Connects to <strong>negative</strong> input of KSampler
+                            (What you DON'T want).</li>
+                    </ul>
                 </div>
                 <div class="lang-section ar">
-                    <p><strong>نصيحة 1:</strong> راقب دائماً الشاشة السوداء (الكونسول) إذا فشل التوليد!</p>
-                    <p><strong>نصيحة 2:</strong> ابدأ بتوليد صور صغيرة (512x512) للتجربة، ثم قم برفع جودتها لاحقاً.</p>
-                    <p><strong>نصيحة 3:</strong> إضافة <strong>ComfyUI Manager</strong> ضرورية جداً! ثبتها عن طريق أمر
-                        `git clone` داخل مجلد `custom_nodes`.</p>
+                    <p>هنا تكتب ما تريده.</p>
+                    <ul>
+                        <li><strong>العقدة الإيجابية (Positive):</strong> توصل بمدخل <strong>positive</strong> في
+                            KSampler (ما تريده).</li>
+                        <li><strong>العقدة السلبية (Negative):</strong> توصل بمدخل <strong>negative</strong> في KSampler
+                            (ما لا تريده).</li>
+                    </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- Navigation Buttons -->
-        <div class="nav-buttons">
-            <a href="03_Generative_AI.html" class="btn-nav btn-prev">← Chapter 3</a>
-            <a href="05_ComfyUI_Manager.html" class="btn-nav btn-next">Chapter 5 →</a>
-        </div>
-
-        <!-- Language Settings -->
-        <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h3 style="margin: 0;">Language Settings 🌍</h3>
-                    <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+            <!-- Empty Latent Image -->
+            <div class="example-box">
+                <div class="definition">
+                    <strong>3. Empty Latent Image</strong> <span style="float:right">الصورة الأولية الفارغة</span>
                 </div>
-                <div style="display: flex; gap: 20px;">
-                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                        <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
-                        English 🇺🇸
-                    </label>
-                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                        <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
-                        العربية 🇸🇦
-                    </label>
+                <div class="lang-section en">
+                    <p>This sets the <strong>Size</strong> of your image.</p>
+                    <ul>
+                        <li><strong>Width/Height:</strong> 512x512 (SD1.5) or 1024x1024 (SDXL).</li>
+                        <li>It creates a "Blank Canvas" for the AI to draw on.</li>
+                    </ul>
+                </div>
+                <div class="lang-section ar">
+                    <p>هذه العقدة تحدد <strong>أبعاد الصورة</strong>.</p>
+                    <ul>
+                        <li><strong>Width/Height:</strong> استخدم 512x512 مع SD1.5 أو 1024x1024 مع SDXL.</li>
+                        <li>إنها تخلق "لوحة رسم فارغة" للذكاء الاصطناعي ليبدأ العمل عليها.</li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- KSampler -->
+            <div class="example-box">
+                <div class="definition">
+                    <strong>4. KSampler</strong> <span style="float:right">الطباخ (KSampler)</span>
+                </div>
+                <div class="lang-section en">
+                    <p>The most busy node! It takes EVERYTHING: Model + Pos/Neg Prompts + Latent Image.</p>
+                    <p>It processes them to create the final noise pattern.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>العقدة الأكثر انشغالاً! تأخذ كل شيء: الموديل + النصوص + الصورة الأولية (Latent).</p>
+                    <p>تقوم بطبخهم معاً لإنتاج نمط الضوضاء النهائي.</p>
+                </div>
+            </div>
+
+            <!-- VAE Decode -->
+            <div class="example-box">
+                <div class="definition">
+                    <strong>5. VAE Decode</strong> <span style="float:right">المحول (VAE Decode)</span>
+                </div>
+                <div class="lang-section en">
+                    <p><strong>Latent -> Pixels.</strong> The "Latent" image looks like colorful noise to humans. The
+                        VAE Decode turns that noise into the final viewable image.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p><strong>من Latent إلى بكسل.</strong> صورة "Latent" تبدو مجرد ضوضاء ملونة لنا. هذه العقدة تحول تلك
+                        الضوضاء إلى الصورة النهائية التي نراها.</p>
+                </div>
+            </div>
+
+            <!-- VAE Loading Warning (New) -->
+            <div
+                style="margin-top: 20px; padding: 15px; border-left: 5px solid #f59e0b; background: #fffbeb; border-radius: 8px;">
+                <strong>⚠️ Weighted Note: Baked vs Loaded VAE</strong>
+                <div class="lang-section en">
+                    <p><strong>Scenario A (Checkpoints):</strong> Most models (e.g., Juggernaut, RealVision) have VAE
+                        Built-in ("Baked"). You DON'T need to load one separately.</p>
+                    <p><strong>Scenario B (UNETs):</strong> If you download a "Diffusion Model" or "UNET" alone, it is
+                        empty. You <strong>MUST</strong> add a <strong>"Load VAE"</strong> node and connect it to the
+                        VAE Decode.</p>
+                </div>
+                <div class="lang-section ar"
+                    style="border-right: none; border-top: 1px solid #fcd34d; padding-top: 10px; margin-top: 10px;">
+                    <p><strong>الحالة أ (Checkpoints):</strong> معظم الموديلات تأتي والـ VAE مدمج بداخلها. لا تحتاج
+                        لتحميله.</p>
+                    <p><strong>الحالة ب (UNETs):</strong> إذا قمت بتحميل موديل دفيوشن لوحده، فهو فارغ! يجب عليك إضافة
+                        عقدة <strong>"Load VAE"</strong> وتوصيلها يدوياً.</p>
+                </div>
+            </div>
+
         </div>
+    </div>
+
+    <!-- Suggested New Data (Dismissible) -->
+    <div id="suggestion-card" class="card"
+        style="border: 2px dashed #f59e0b; background-color: #fffbeb; position: relative;">
+        <button onclick="document.getElementById('suggestion-card').style.display='none'"
+            style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2em; color: #b45309;"
+            title="Dismiss">
+            ✖
+        </button>
+        <div class="card-header" style="background: none; border-bottom: 2px dashed #fcd34d;">
+            <span class="card-title" style="color: #b45309;">🚀 Suggested Next Topics</span>
+            <span class="card-title arabic-text" style="color: #b45309;">مواضيع مقترحة</span>
+        </div>
+        <div class="card-content">
+            <div class="lang-section en">
+                <p>To master ComfyUI, you should look into these next:</p>
+                <ul>
+                    <li><strong>Samplers & Schedulers:</strong> (Euler a, Karras) - The "Flavor" of generation.</li>
+                    <li><strong>Seed:</strong> The specific "Random Number" used. Saving it allows you to recreate
+                        the exact same image.</li>
+                    <li><strong>Workflows (.json):</strong> ComfyUI saves your entire setup as a JSON file. easy to
+                        share.</li>
+                </ul>
+            </div>
+            <div class="lang-section ar">
+                <p>لاحتراف ComfyUI، تحقق من هذه المواضيع تالياً:</p>
+                <ul>
+                    <li><strong>Samplers & Schedulers:</strong> (مثل Euler a, Karras) - تحدد "نكهة" التوليد.</li>
+                    <li><strong>Seed (البذرة):</strong> الرقم العشوائي المستخدم. حفظه يسمح لك بإعادة إنتاج نفس
+                        الصورة تماماً.</li>
+                    <li><strong>Workflows:</strong> يحفظ ComfyUI ترتيب العقد (Nodes) كملف JSON ليسهل مشاركته.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Running and Maintenance (New Section) -->
+    <div class="card" style="border-left: 5px solid #ef4444;">
+        <div class="card-header">
+            <span class="card-title">Running & Maintenance ⚠️</span>
+            <span class="card-title arabic-text">التشغيل والصيانة</span>
+        </div>
+        <div class="card-content">
+            <div class="lang-section en">
+                <ul>
+                    <li><strong>The Black Window (Console):</strong> When you run ComfyUI, a black window opens.
+                        <strong>DO NOT CLOSE IT!</strong> If you close it, the server stops.
+                    </li>
+                    <li><strong>Updating:</strong> To update, look for the <code>update_comfyui</code> script in
+                        your folder and run it.</li>
+                    <li><strong>Important Folders:</strong>
+                        <ul>
+                            <li><code>custom_nodes</code>: Where you install add-ons (Manager, ControlNet).</li>
+                            <li><code>input</code>: Put your images here for "Image-to-Image" tasks.</li>
+                            <li><code>output</code>: Where your generated images are saved.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="lang-section ar">
+                <ul>
+                    <li><strong>الشاشة السوداء (الكونسول):</strong> عند تشغيل البرنامج، تظهر نافذة سوداء. <strong>لا
+                            تغلقها!</strong> إغلاقها يوقف البرنامج فوراً.</li>
+                    <li><strong>التحديث:</strong> لتحديث البرنامج، ابحث عن ملف <code>update_comfyui</code> في المجلد
+                        وشغله.</li>
+                    <li><strong>مجلدات مهمة:</strong>
+                        <ul>
+                            <li><code>custom_nodes</code>: لتثبيت الإضافات (مثل Manager).</li>
+                            <li><code>input</code>: ضع صورك هنا إذا أردت تعديلها (Image-to-Image).</li>
+                            <li><code>output</code>: المكان الذي تحفظ فيه صورك النهائية.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Folder Structure Explained -->
+    <div class="card" style="border-left: 5px solid #3b82f6;">
+        <div class="card-header">
+            <span class="card-title">Folder Structure Explained 📂</span>
+            <span class="card-title arabic-text">شرح المجلدات بالتفصيل</span>
+        </div>
+        <div class="card-content">
+            <div class="lang-section en">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <th style="padding: 10px;">Folder 📁</th>
+                        <th style="padding: 10px;">Function 🔧</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>custom_nodes</strong></td>
+                        <td style="padding: 10px;">The "Plugins" folder. Install ComfyUI-Manager, ControlNet, and
+                            other addons here.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>input</strong></td>
+                        <td style="padding: 10px;">Drag & Drop your source images here (for Image-to-Image or
+                            Inpainting).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>output</strong></td>
+                        <td style="padding: 10px;">Your final masterpieces appear here! (Images & Videos).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>models</strong></td>
+                        <td style="padding: 10px;">The most important one. Put Checkpoints, LoRAs, and VAEs inside
+                            their specific subfolders. <strong>(Don't forget to click Refresh!)</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>temp</strong></td>
+                        <td style="padding: 10px;">Temporary preview images. Safe to ignore or clean up.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>user</strong></td>
+                        <td style="padding: 10px;">Saves your personal settings and configurations.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lang-section ar">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <th style="padding: 10px; text-align: right;">المجلد 📁</th>
+                        <th style="padding: 10px; text-align: right;">الوظيفة 🔧</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>custom_nodes</strong></td>
+                        <td style="padding: 10px;">مجلد "الإضافات". هنا نضع ComfyUI-Manager و ControlNet وغيرها.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>input</strong></td>
+                        <td style="padding: 10px;">ضع صورك المصدرية هنا (لاستخدامها في تعديل الصور Image-to-Image).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>output</strong></td>
+                        <td style="padding: 10px;">هنا تظهر نتائجك النهائية! (الصور والفيديوهات).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>models</strong></td>
+                        <td style="padding: 10px;">الأهم على الإطلاق. نضع ملفات Checkpoints و LoRAs و VAE داخل
+                            مجلداتها الفرعية. <strong>(لا تنس ضغط Refresh!)</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>temp</strong></td>
+                        <td style="padding: 10px;">ملفات مؤقتة للمعاينة. يمكن تجاهلها.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px;"><strong>user</strong></td>
+                        <td style="padding: 10px;">يحفظ إعداداتك الشخصية وتفضيلاتك.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Shortcuts Tip -->
+            <div class="example-box" style="background-color: #f0fdf4; border-color: #86efac; color: #166534;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <span style="font-size: 1.5em;">💡</span>
+                    <div>
+                        <strong>Workflow Tip: Use Shortcuts!</strong> <span style="float:right">نصيحة عمل: استخدم
+                            الاختصارات!</span>
+                    </div>
+                </div>
+                <div class="lang-section en">
+                    <p style="margin: 0;">Don't dig through 10 folders every time! Right-click the
+                        <code>input</code>, <code>output</code>, and <code>models</code> folders -> <strong>Send to
+                            Desktop (create shortcut)</strong>. Organize them in one place for easy access.
+                    </p>
+                </div>
+                <div class="lang-section ar">
+                    <p style="margin: 0;">لا تضيع وقتك في فتح المجلدات كل مرة! اضغط بزر الفأرة الأيمن على مجلدات
+                        <code>input</code> و <code>output</code> -> واختر <strong>Send to Desktop</strong>. ضع
+                        الاختصارات في مكان واحد لسهولة الوصول.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Hardware Note -->
+    <div class="card" style="border-left: 5px solid #10b981;">
+        <div class="card-header">
+            <span class="card-title">Hardware Recommendation</span>
+            <span class="card-title arabic-text">توصيات العتاد</span>
+        </div>
+        <div class="card-content">
+            <div class="lang-section en">
+                <p><strong>Windows + NVIDIA is King:</strong> The best experience is on <strong>Windows</strong>
+                    with an <strong>NVIDIA GPU</strong>.</p>
+                <p>Why NVIDIA? Because of <strong>CUDA Cores</strong>. Almost all AI tools are built for CUDA first.
+                </p>
+                <p>Mac and AMD work, but are often slower or harder to set up.</p>
+            </div>
+            <div class="lang-section ar">
+                <p><strong>Windows + NVIDIA هي الأفضل:</strong> أفضل تجربة تكون على نظام <strong>Windows</strong> مع
+                    كارت شاشة <strong>NVIDIA</strong>.</p>
+                <p>لماذا NVIDIA؟ بسبب أنوية <strong>CUDA</strong>. تقريباً كل أدوات الذكاء الاصطناعي مبنية لها.</p>
+                <p>أجهزة Mac و AMD تعمل، لكنها غالباً أبطأ أو أصعب في الإعداد.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Public Notes (Instructor Tips) -->
+    <div class="card" style="border-left: 5px solid #f59e0b;">
+        <div class="card-header">
+            <span class="card-title">My Personal Notes 📝</span>
+            <span class="card-title arabic-text">ملاحظاتي الشخصية</span>
+        </div>
+        <div class="card-content">
+            <div class="lang-section en">
+                <p><strong>Tip 1:</strong> Always check the console if generation fails!</p>
+                <p><strong>Tip 2:</strong> Start with small images (512x512) to test, then upscale.</p>
+                <p><strong>Tip 3:</strong> <strong>ComfyUI Manager</strong> is essential! Install it by running `git
+                    clone` inside the `custom_nodes` folder.</p>
+            </div>
+            <div class="lang-section ar">
+                <p><strong>نصيحة 1:</strong> راقب دائماً الشاشة السوداء (الكونسول) إذا فشل التوليد!</p>
+                <p><strong>نصيحة 2:</strong> ابدأ بتوليد صور صغيرة (512x512) للتجربة، ثم قم برفع جودتها لاحقاً.</p>
+                <p><strong>نصيحة 3:</strong> إضافة <strong>ComfyUI Manager</strong> ضرورية جداً! ثبتها عن طريق أمر
+                    `git clone` داخل مجلد `custom_nodes`.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <a href="03_Generative_AI.html" class="btn-nav btn-prev">← Chapter 3</a>
+        <a href="05_ComfyUI_Manager.html" class="btn-nav btn-next">Chapter 5 →</a>
+    </div>
+
+    <!-- Language Settings -->
+    <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h3 style="margin: 0;">Language Settings 🌍</h3>
+                <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+            </div>
+            <div style="display: flex; gap: 20px;">
+                <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                    <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
+                    English 🇺🇸
+                </label>
+                <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                    <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
+                    العربية 🇸🇦
+                </label>
+            </div>
+        </div>
+    </div>
 
     </div>
 

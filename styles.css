@@ -418,3 +418,21 @@ tr:hover td {
     font-size: 0.9rem;
     margin: 0;
 }
+
+/* Language Toggling Utilities */
+body.hide-ar .ar,
+body.hide-ar .arabic-text,
+body.hide-ar .arabic-title,
+body.hide-ar .ar-meaning {
+    display: none !important;
+}
+
+body.hide-en .en,
+body.hide-en .chapter-info p,
+/* Hide English descriptions */
+body.hide-en .definition strong,
+/* Hide English definitions headers */
+body.hide-en .card-title:not(.arabic-text) {
+    /* Attempt to hide English titles */
+    display: none !important;
+}

@@ -168,8 +168,47 @@
             <a href="index.html" class="btn-nav btn-next">Back to Home 🏠</a>
         </div>
 
+        <!-- Language Settings -->
+        <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0;">Language Settings 🌍</h3>
+                    <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
+                        English 🇺🇸
+                    </label>
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
+                        العربية 🇸🇦
+                    </label>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- Persistent Language Script -->
+    <script>
+        const enCheckbox = document.getElementById('toggle-en');
+        const arCheckbox = document.getElementById('toggle-ar');
+        const body = document.body;
+
+        function applyLanguageSettings() {
+            const showEn = localStorage.getItem('show-en') !== 'false';
+            const showAr = localStorage.getItem('show-ar') !== 'false';
+            enCheckbox.checked = showEn;
+            arCheckbox.checked = showAr;
+            if (!showEn) body.classList.add('hide-en'); else body.classList.remove('hide-en');
+            if (!showAr) body.classList.add('hide-ar'); else body.classList.remove('hide-ar');
+        }
+
+        enCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-en', e.target.checked); applyLanguageSettings(); });
+        arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
+        applyLanguageSettings();
+    </script>
 </body>
 
 </html>

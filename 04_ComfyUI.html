@@ -47,10 +47,14 @@
                     <div class="note-concepts">
                         <h4>Capabilities:</h4>
                         <ul>
-                            <li><strong>Images 🖼️:</strong> Text-to-Image, Image-to-Image, Inpainting (Editing).</li>
-                            <li><strong>Videos 🎥:</strong> AnimateDiff, Video-to-Video transfer.</li>
-                            <li><strong>Audio 🎵:</strong> Audio-Reactive (Sound visualizing), TTS (Text-to-Speech).
+                            <li><strong>Images 🖼️:</strong> Text-to-Image (T2I), Image-to-Image (I2I), Inpainting.</li>
+                            <li><strong>Videos 🎥:</strong>
+                                <ul>
+                                    <li><strong>T2V:</strong> Text-to-Video (Sora, Kling).</li>
+                                    <li><strong>I2V:</strong> Image-to-Video (Turning a photo into a movie).</li>
+                                </ul>
                             </li>
+                            <li><strong>Audio 🎵:</strong> Audio-Reactive & TTS.</li>
                             <li><strong>Models 🧠:</strong> Runs Checkpoints (SD1.5, SDXL), LoRAs, and ControlNets.</li>
                         </ul>
                     </div>
@@ -66,8 +70,13 @@
                     <div class="note-concepts">
                         <h4>القدرات:</h4>
                         <ul>
-                            <li><strong>صور 🖼️:</strong> تحويل النص لصورة، تعديل الصور (Inpainting).</li>
-                            <li><strong>فيديو 🎥:</strong> تحريك الصور (AnimateDiff) أو تغيير ستايل الفيديو.</li>
+                            <li><strong>صور 🖼️:</strong> تحويل النص لصورة (T2I)، تعديل الصور (I2I).</li>
+                            <li><strong>فيديو 🎥:</strong>
+                                <ul>
+                                    <li><strong>T2V:</strong> نص إلى فيديو (مثل Sora).</li>
+                                    <li><strong>I2V:</strong> صورة إلى فيديو (تحريك الصور الثابتة).</li>
+                                </ul>
+                            </li>
                             <li><strong>صوت 🎵:</strong> تفاعل الصور مع الصوت (Audio Reactive).</li>
                         </ul>
                     </div>
@@ -246,6 +255,30 @@
                         </tr>
                     </table>
                 </div>
+
+                <!-- Shortcuts Tip -->
+                <div class="example-box" style="background-color: #f0fdf4; border-color: #86efac; color: #166534;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <span style="font-size: 1.5em;">💡</span>
+                        <div>
+                            <strong>Workflow Tip: Use Shortcuts!</strong> <span style="float:right">نصيحة عمل: استخدم
+                                الاختصارات!</span>
+                        </div>
+                    </div>
+                    <div class="lang-section en">
+                        <p style="margin: 0;">Don't dig through 10 folders every time! Right-click the
+                            <code>input</code>, <code>output</code>, and <code>models</code> folders -> <strong>Send to
+                                Desktop (create shortcut)</strong>. Organize them in one place for easy access.
+                        </p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p style="margin: 0;">لا تضيع وقتك في فتح المجلدات كل مرة! اضغط بزر الفأرة الأيمن على مجلدات
+                            <code>input</code> و <code>output</code> -> واختر <strong>Send to Desktop</strong>. ضع
+                            الاختصارات في مكان واحد لسهولة الوصول.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -300,8 +333,47 @@
             <a href="05_ComfyUI_Manager.html" class="btn-nav btn-next">Chapter 5 →</a>
         </div>
 
+        <!-- Language Settings -->
+        <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0;">Language Settings 🌍</h3>
+                    <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
+                        English 🇺🇸
+                    </label>
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
+                        العربية 🇸🇦
+                    </label>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- Persistent Language Script -->
+    <script>
+        const enCheckbox = document.getElementById('toggle-en');
+        const arCheckbox = document.getElementById('toggle-ar');
+        const body = document.body;
+
+        function applyLanguageSettings() {
+            const showEn = localStorage.getItem('show-en') !== 'false';
+            const showAr = localStorage.getItem('show-ar') !== 'false';
+            enCheckbox.checked = showEn;
+            arCheckbox.checked = showAr;
+            if (!showEn) body.classList.add('hide-en'); else body.classList.remove('hide-en');
+            if (!showAr) body.classList.add('hide-ar'); else body.classList.remove('hide-ar');
+        }
+
+        enCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-en', e.target.checked); applyLanguageSettings(); });
+        arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
+        applyLanguageSettings();
+    </script>
 </body>
 
 </html>

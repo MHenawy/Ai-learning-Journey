@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Copilot & Tools - AI Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AI Learning Journey</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="vocabulary.html">Vocabulary</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h1>6. Copilot & Essential Tools <span class="arabic-title">أدوات المساعد والأساسيات</span></h1>
+
+        <!-- Intro -->
+        <div class="card" style="border-left: 5px solid var(--primary-color);">
+            <div class="card-header">
+                <span class="card-title">Supercharging ComfyUI 🚀</span>
+                <span class="card-title arabic-text">تعزيز قدرات ComfyUI</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>ComfyUI is powerful, but "Vanilla" (default) ComfyUI can be hard to manage. Custom Tools make
+                        your life easier by adding features like <strong>Logic</strong>, <strong>System
+                            Monitoring</strong>, and <strong>Workflow Assistance</strong>.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>برنامج ComfyUI قوي، ولكن النسخة "الخام" (الافتراضية) قد تكون صعبة الإدارة. الأدوات المخصصة تجعل
+                        حياتك أسهل عبر إضافة ميزات مثل <strong>المنطق</strong>، <strong>مراقبة النظام</strong>، و
+                        <strong>مساعد سير العمل</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Tools List -->
+        <div class="card" style="border-left: 5px solid var(--secondary-color);">
+            <div class="card-header">
+                <span class="card-title">The "Must-Have" List 🛠️</span>
+                <span class="card-title arabic-text">قائمة الأدوات الضرورية</span>
+            </div>
+            <div class="card-content">
+
+                <!-- rgthree -->
+                <div class="example-box">
+                    <div class="definition">
+                        <strong>1. rgthree-comfy</strong> <span style="float:right">أدوات rgthree</span>
+                    </div>
+                    <div class="lang-section en">
+                        <p>The "Power User" suite. It adds:</p>
+                        <ul>
+                            <li><strong>Mute / Bypass:</strong> Quickly turn off parts of your workflow without deleting
+                                them.</li>
+                            <li><strong>Fast Groups:</strong> Organize nodes into clean, labeled boxes.</li>
+                            <li><strong>Context:</strong> Pass data between nodes without messy wires.</li>
+                        </ul>
+                    </div>
+                    <div class="lang-section ar">
+                        <p>مجموعة "المستخدم المحترف". تضيف:</p>
+                        <ul>
+                            <li><strong>كتم / تجاوز (Mute/Bypass):</strong> إيقاف أجزاء من العمل بسرعة دون حذفها.</li>
+                            <li><strong>مجموعات سريعة:</strong> تنظيم العقد داخل صناديق نظيفة ومعنونة.</li>
+                            <li><strong>السياق (Context):</strong> تمرير البيانات بين العقد بدون أسلاك فوضوية.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Crystools -->
+                <div class="example-box">
+                    <div class="definition">
+                        <strong>2. ComfyUI-Crystools</strong> <span style="float:right">أدوات Crystools</span>
+                    </div>
+                    <div class="lang-section en">
+                        <p><strong>Your Dashboard.</strong> It shows a small bar inside ComfyUI displaying:</p>
+                        <ul>
+                            <li><strong>VRAM / RAM Usage:</strong> See if your model is too big for your GPU.</li>
+                            <li><strong>GPU Load:</strong> Watch your graphics card work in real-time.</li>
+                        </ul>
+                    </div>
+                    <div class="lang-section ar">
+                        <p><strong>لوحة القيادة الخاصة بك.</strong> تظهر شريطاً صغيراً داخل ComfyUI يعرض:</p>
+                        <ul>
+                            <li><strong>استهلاك الذاكرة (VRAM/RAM):</strong> لتعرف إذا كان الموديل أكبر من قدرة كارت
+                                الشاشة.</li>
+                            <li><strong>ضغط المعالج الرسومي:</strong> شاهد كارت الشاشة وهو يعمل في الوقت الفعلي.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Temperature Warning -->
+                <div
+                    style="margin-top: 15px; padding: 15px; border-left: 5px solid #ef4444; background: #fff5f5; border-radius: 8px;">
+                    <h4 style="color: #ef4444; margin-top: 0;">⚠️ Hardware Safety Warning 🌡️</h4>
+                    <p class="arabic-text" style="color: #b91c1c; margin-bottom: 10px;">تحذير سلامة الأجهزة</p>
+
+                    <div class="lang-section en">
+                        <p><strong>WATCH YOUR TEMPS!</strong> AI generation is very heavy. Use Crystools to monitor your
+                            GPU temperature.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="color: #10b981;"><strong>✅ Below 70°C:</strong> Safe for long runs.</li>
+                            <li style="color: #f59e0b;"><strong>⚠️ 70°C - 80°C:</strong> High. Okay for a quick task,
+                                but not for hours.</li>
+                            <li style="color: #ef4444; font-weight: bold;"><strong>🛑 Above 80°C:</strong> DANGEROUS.
+                                Stop immediately. Bad for hardware lifespan.</li>
+                        </ul>
+                        <p><strong>Cooling Tips:</strong> Turn on AC, put a fan in front of the PC, and run only
+                            <strong>one task</strong> at a time.</p>
+                    </div>
+
+                    <div class="lang-section ar">
+                        <p><strong>راقب الحرارة!</strong> توليد الذكاء الاصطناعي عملية ثقيلة جداً. استخدم Crystools
+                            لمراقبة حرارة كارت الشاشة.</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="color: #10b981;"><strong>✅ أقل من 70°C:</strong> آمن للعمل الطويل.</li>
+                            <li style="color: #f59e0b;"><strong>⚠️ 70°C - 80°C:</strong> مرتفع. مقبول لمهمة سريعة، لكن
+                                ليس لساعات.</li>
+                            <li style="color: #ef4444; font-weight: bold;"><strong>🛑 فوق 80°C:</strong> خطر جداً. توقف
+                                فوراً. هذا يؤذي جهازك.</li>
+                        </ul>
+                        <p><strong>نصائح التبريد:</strong> شغل التكييف، ضع مروحة أمام الكيسة، وشغل <strong>مهمة
+                                واحدة</strong> فقط في المرة.</p>
+                    </div>
+                </div>
+
+                <!-- LogicUtils -->
+                <div class="example-box">
+                    <div class="definition">
+                        <strong>3. ComfyUI-LogicUtils</strong> <span style="float:right">أدوات المنطق</span>
+                    </div>
+                    <div class="lang-section en">
+                        <p><strong>The Brain.</strong> Allows you to use "Programmer Logic" in your images.</p>
+                        <ul>
+                            <li><strong>If / Else:</strong> "If image is dark, brighten it. Else, leave it."</li>
+                            <li><strong>Comparisons:</strong> Check if Number A > Number B.</li>
+                            <li><strong>Data Types:</strong> Convert Integer to Float, String to Bool, etc.</li>
+                        </ul>
+                    </div>
+                    <div class="lang-section ar">
+                        <p><strong>العقل المدبر.</strong> يسمح لك باستخدام "منطق المبرمجين" في صورك.</p>
+                        <ul>
+                            <li><strong>إذ / وإلا (If/Else):</strong> "إذا كانت الصورة مظلمة، فتحها. وإلا، اتركها."</li>
+                            <li><strong>المقارنات:</strong> تحقق مما إذا كان الرقم A > الرقم B.</li>
+                            <li><strong>أنواع البيانات:</strong> تحويل الأرقام الصحيحة لعشرية، والنصوص لمنطقية، إلخ.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Workflow Management Section -->
+        <div class="card" style="border-left: 5px solid #6366f1;">
+            <div class="card-header">
+                <span class="card-title">Basic Controls & Settings 🎛️</span>
+                <span class="card-title arabic-text">عناصر التحكم الأساسية</span>
+            </div>
+            <div class="card-content">
+
+                <!-- Bypass vs Disable -->
+                <div class="example-box">
+                    <div class="definition">
+                        <strong>Bypass vs Disable</strong> <span style="float:right">التجاوز مقابل التعطيل</span>
+                    </div>
+                    <div class="lang-section en">
+                        <p><strong>🚫 Disable (Ctrl + M):</strong> Acts like a <strong>Wall</strong>. The node stops
+                            working, and anything after it also stops.</p>
+                        <p><strong>🌉 Bypass (Ctrl + B):</strong> Acts like a <strong>Bridge</strong>. The node is
+                            skipped, but the wire continues to the next node as if this one wasn't there.</p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p><strong>🚫 التعطيل (Disable):</strong> يعمل مثل <strong>الجدار</strong>. تتوقف العقدة عن
+                            العمل، وكل ما بعدها يتوقف أيضاً.</p>
+                        <p><strong>🌉 التجاوز (Bypass):</strong> يعمل مثل <strong>الجسر</strong>. يتم تخطي العقدة
+                            الحالية، ولكن السلك يمر للعقدة التالية وكأن هذه العقدة غير موجودة.</p>
+                    </div>
+                </div>
+
+                <!-- Groups -->
+                <div class="example-box">
+                    <div class="definition">
+                        <strong>Group Nodes</strong> <span style="float:right">تجميع العقد (المجموعات)</span>
+                    </div>
+                    <div class="lang-section en">
+                        <p>Right-click -> Add Group. Creates a movable box. Put nodes inside it to move them all
+                            together. Essential for keeping big workflows clean.</p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p>زر أيمن -> Add Group. ينشئ صندوقاً متحركاً. ضع العقد داخله لتحريكها معاً. ضروري للحفاظ على
+                            نظافة المشاريع الكبيرة.</p>
+                    </div>
+                </div>
+
+                <!-- Custom Settings -->
+                <div class="example-box">
+                    <div class="definition">
+                        <strong>Custom Settings</strong> <span style="float:right">الإعدادات المخصصة</span>
+                    </div>
+                    <div class="lang-section en">
+                        <p>Some nodes (like LogicUtils or Custom Connectors) have hidden settings. Right-click the node
+                            to see options like "Convert Widget to Input" or access specific tool settings.</p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p>بعض العقد (مثل LogicUtils) لها إعدادات مخفية. اضغط بالزر الأيمن على العقدة لرؤية خيارات مثل
+                            "تحويل الأداة إلى مدخل" (Convert Widget) أو إعدادات الأداة الخاصة.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Copilot Section -->
+        <div class="card" style="border-left: 5px solid #10b981;">
+            <div class="card-header">
+                <span class="card-title">ComfyUI-Copilot 🤖</span>
+                <span class="card-title arabic-text">مساعد ComfyUI</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p>Just like we are talking now, <strong>Copilot</strong> nodes allow you to chat with an AI inside
+                        ComfyUI to build workflows for you.</p>
+                    <p>It can suggest nodes, fix connections, or even explain what a specific node does.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>تماماً كما نتحدث الآن، عقد <strong>Copilot</strong> تسمح لك بالدردشة مع ذكاء اصطناعي داخل ComfyUI
+                        ليقوم ببناء سير العمل نيابة عنك.</p>
+                    <p>يمكنه اقتراح عقد، إصلاح التوصيلات، أو حتى شرح وظيفة عقدة معينة.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="05_ComfyUI_Manager.html" class="btn-nav btn-prev">← Chapter 5</a>
+            <a href="index.html" class="btn-nav btn-next" style="background-color: var(--secondary-color);">Home 🏠</a>
+        </div>
+
+        <!-- Language Settings -->
+        <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0;">Language Settings 🌍</h3>
+                    <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
+                        English 🇺🇸
+                    </label>
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
+                        العربية 🇸🇦
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Persistent Language Script -->
+    <script>
+        const enCheckbox = document.getElementById('toggle-en');
+        const arCheckbox = document.getElementById('toggle-ar');
+        const body = document.body;
+
+        function applyLanguageSettings() {
+            const showEn = localStorage.getItem('show-en') !== 'false';
+            const showAr = localStorage.getItem('show-ar') !== 'false';
+            enCheckbox.checked = showEn;
+            arCheckbox.checked = showAr;
+            if (!showEn) body.classList.add('hide-en'); else body.classList.remove('hide-en');
+            if (!showAr) body.classList.add('hide-ar'); else body.classList.remove('hide-ar');
+        }
+
+        enCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-en', e.target.checked); applyLanguageSettings(); });
+        arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
+        applyLanguageSettings();
+    </script>
+</body>
+
+</html>

@@ -19,3 +19,17 @@
 | **Float** | عدد عشري / فاصلة عائمة | Numbers with decimals (e.g., 3.14) |
 | **String (str)** | سلسلة نصية | Text enclosed in quotes (e.g., "Hello") |
 | **Boolean (bool)** | منطقي / بولياني | True or False values |
+| **Operations Nodes** | عقد العمليات | Nodes for math/logic to manipulate data and drive parameters |
+| **Custom Nodes** | العقد المخصصة | Add-ons created by the community to extend ComfyUI |
+| **Copilot** | المساعد الآلي | AI assistant helping to build workflows |
+| **rgthree** | أدوات rgthree | Essential toolkit (Mute, Bypass, Context) |
+| **Crystools** | أدوات Crystools | System monitor (VRAM, RAM, GPU) |
+| **LogicUtils** | أدوات المنطق | Nodes for boolean logic and data control |
+| **Bypass** | تجاوز | Acts like a bridge (Skip node, keep flow) |
+| **Disable** | تعطيل | Acts like a wall (Stop node, stop flow) |
+| **Group Node** | مجموعة عقد | A box to organize multiple nodes together |
+| **Concatenate** | دمج النصوص | Joining two or more text strings together |
+| **Primitive Node** | عقدة بدائية | A generic node to hold a single value (String, Int, etc.) |
+| **Widget** | أداة إدخال | The input box/slider directly on the node |
+| **Input Slot** | منفذ الدخل | The connection point (dot) to wire data in |
+| **Type Casting** | تحويل النوع | Converting data from one type to another (e.g. Int to String) |

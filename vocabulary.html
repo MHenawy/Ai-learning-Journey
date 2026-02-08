@@ -81,6 +81,44 @@
                     <td class="ar-meaning">المحول</td>
                     <td class="definition">Architecture using Self-Attention to understand context.</td>
                 </tr>
+                <tr>
+                    <td class="term">OpenAI (Closed Source)</td>
+                    <td class="ar-meaning">أوبن إيه آي (مغلق المصدر)</td>
+                    <td class="definition">The company behind ChatGPT & DALL-E. You can't see or change their
+                        code/models.</td>
+                </tr>
+                <tr>
+                    <td class="term">Flux (Open Weights)</td>
+                    <td class="ar-meaning">موديل فلكس (أوزان مفتوحة)</td>
+                    <td class="definition">State-of-the-art Model (2024) by Black Forest Labs. Excellent at spelling
+                        text within images.</td>
+                </tr>
+                <tr>
+                    <td class="term">Diffusion Model</td>
+                    <td class="ar-meaning">نموذج الانتشار</td>
+                    <td class="definition">The AI system used to generate images. To work, it <strong>MUST</strong> have
+                        3 parts: CLIP (to read), U-Net (to draw), and VAE (to see).</td>
+                </tr>
+
+                <tr>
+                    <td class="term">CivitAI</td>
+                    <td class="ar-meaning">موقع CivitAI</td>
+                    <td class="definition">The #1 website to download Models, LoRAs, and find the "Golden Settings"
+                        (CFG/Steps).</td>
+                </tr>
+
+                <tr>
+                    <td class="term">Sampler</td>
+                    <td class="ar-meaning">خوارزمية الرسم (العينات)</td>
+                    <td class="definition">The <strong>algorithm / tool</strong> that calculates the math to remove
+                        noise (e.g. Euler, DPM++).</td>
+                </tr>
+                <tr>
+                    <td class="term">Scheduler</td>
+                    <td class="ar-meaning">الجدولة (المخطط الزمني)</td>
+                    <td class="definition">The <strong>timetable / plan</strong>. It decides <em>how much</em> noise to
+                        remove at each step (Fast start? Slow end?).</td>
+                </tr>
 
                 <tr>
                     <td colspan="3" style="background:#f1f5f9; font-weight:bold;">Training</td>
@@ -138,18 +176,19 @@
                 <tr>
                     <td class="term">CLIP / Text Encoder</td>
                     <td class="ar-meaning">مشفر النصوص</td>
-                    <td class="definition">Translates text to numbers (Vectors).</td>
+                    <td class="definition">The eyes & ears of the model. It encodes your text prompt into vectors so the
+                        Diffusion Model can understand it.</td>
                 </tr>
                 <tr>
                     <td class="term">U-Net</td>
                     <td class="ar-meaning">الشبكة الرابطة</td>
-                    <td class="definition">The noise-removing engine (The actual "Diffusion" part).</td>
+                    <td class="definition">The actual "Brain" that processes the noise.</td>
                 </tr>
                 <tr>
                     <td class="term">VAE (Variational Autoencoder)</td>
                     <td class="ar-meaning">المشفّر التلقائي (VAE)</td>
-                    <td class="definition">The "Translator". Turns the compressed "Latent" noise back into a normal
-                        visible image (Pixels).</td>
+                    <td class="definition">The "Final Translator". It takes the hidden mathematical image (Latent) and
+                        explains/decodes it into visible pixels.</td>
                 </tr>
                 <tr>
                     <td class="term">Latent Space</td>
@@ -182,7 +221,14 @@
                 </tr>
 
                 <tr>
-                    <td colspan="3" style="background:#f1f5f9; font-weight:bold;">ComfyUI & Workflow</td>
+                    <td class="term">CFG Scale</td>
+                    <td class="ar-meaning">مقياس الالتزام (التباين)</td>
+                    <td class="definition">How much the AI <strong>sticks to the prompt</strong>. Higher = More Contrast
+                        & Details. Lower = More Creative / Soft.</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" style="background:#f1f5f9; font-weight:bold;">ComfyUI Basics</td>
                 </tr>
                 <tr>
                     <td class="term">ComfyUI</td>
@@ -216,6 +262,18 @@
                     <td class="ar-meaning">تقليل الضوضاء (لمسة التغيير)</td>
                     <td class="definition">Controls how much creativity the AI adds. Used in Image-to-Image. 1.0 = Max
                         Change.</td>
+                </tr>
+                <tr>
+                    <td class="term">KSampler (Advanced)</td>
+                    <td class="ar-meaning">العينات المتقدم</td>
+                    <td class="definition">A version of KSampler that lets you specify "Start Step" and "End Step". Used
+                        for <strong>Refiners</strong>.</td>
+                </tr>
+                <tr>
+                    <td class="term">Refiner</td>
+                    <td class="ar-meaning">المصقل</td>
+                    <td class="definition">A specialized model (like SDXL Refiner) used only for the last few steps to
+                        clean up details.</td>
                 </tr>
                 <tr>
                     <td class="term">Workflow</td>
@@ -266,6 +324,12 @@
                     <td class="definition">A container box to move and organize multiple nodes together.</td>
                 </tr>
                 <tr>
+                    <td class="term">Subgraph (Convert to Node)</td>
+                    <td class="ar-meaning">سير عمل فرعي (عقدة مجمعة)</td>
+                    <td class="definition">Compressing many nodes into ONE single node (Workflow inside a Workflow).
+                    </td>
+                </tr>
+                <tr>
                     <td class="term">Concatenate</td>
                     <td class="ar-meaning">دمج النصوص</td>
                     <td class="definition">Joining two or more text strings together (e.g. "Cyber" + "punk" =
@@ -293,6 +357,13 @@
                     <td class="ar-meaning">تحويل النوع</td>
                     <td class="definition">Converting one data type to another (e.g. turning the Number 5 into the Text
                         "5").</td>
+                </tr>
+                <tr>
+                    <td class="term">Metadata</td>
+                    <td class="ar-meaning">البيانات الوصفية</td>
+                    <td class="definition">Hidden information within the image file. In ComfyUI, it saves the
+                        <strong>Entire Workflow</strong> (Nodes & Settings).
+                    </td>
                 </tr>
             </tbody>
         </table>

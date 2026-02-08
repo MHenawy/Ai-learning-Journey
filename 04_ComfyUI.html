@@ -142,6 +142,45 @@
                     </div>
                 </div>
 
+                <!-- Anatomy of a Checkpoint (New Important Section) -->
+                <div class="example-box" style="border: 2px solid #8b5cf6; background: #f5f3ff;">
+                    <div class="definition" style="color: #6d28d9;">
+                        <strong>⭐⭐ The Holy Trinity: What is a Checkpoint?</strong>
+                        <span style="float:right">الثالوث المقدس: مما يتكون الموديل؟</span>
+                    </div>
+                    <div class="lang-section en">
+                        <p>This is <strong>SO IMPORTANT</strong>. A Checkpoint file (like `v1-5-pruned.safetensors`) is
+                            actually a <strong>Container</strong> holding 3 different tools:</p>
+                        <ul style="list-style: none; padding: 0; text-align: center; font-weight: bold;">
+                            <li style="margin: 5px; padding: 10px; background: #ddd6fe; border-radius: 5px;">
+                                <span style="color:#bc002d;">🧠 UNET (The Model)</span> +
+                                <span style="color:#d97706;">🗣️ CLIP (The Text Encoder)</span> +
+                                <span style="color:#dc2626;">👁️ VAE (The Decoder)</span>
+                            </li>
+                        </ul>
+                        <p><strong>1. CLIP:</strong> Encodes your text so the model understands it.</p>
+                        <p><strong>2. UNET (Diffusion):</strong> Does the actual work (Drawing).</p>
+                        <p><strong>3. VAE:</strong> Takes the result and "Explains" (Decodes) it into pixels we can see.
+                        </p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p>هذا <strong>مهم جداً</strong>. ملف الموديل (Checkpoint) هو في الحقيقة <strong>حاوية</strong>
+                            تضم 3 أدوات مختلفة:</p>
+                        <ul style="list-style: none; padding: 0; text-align: center; font-weight: bold;">
+                            <li style="margin: 5px; padding: 10px; background: #ddd6fe; border-radius: 5px;">
+                                <span style="color:#bc002d;">🧠 UNET (الموديل)</span> +
+                                <span style="color:#d97706;">🗣️ CLIP (مترجم النصوص)</span> +
+                                <span style="color:#dc2626;">👁️ VAE (مترجم الصور)</span>
+                            </li>
+                        </ul>
+                        <p><strong>1. CLIP:</strong> يترجم كلامك (النص) ليفهمه الموديل.</p>
+                        <p><strong>2. UNET (Diffusion):</strong> يقوم بالعمل الفعلي (الرسم).</p>
+                        <p><strong>3. VAE:</strong> يأخذ النتيجة و "يشرحها" (يفك تشفيرها) لتتحول إلى بكسلات مرئية.</p>
+                    </div>
+                </div>
+
+                <!-- CLIP Text Encode -->
+
                 <!-- CLIP Text Encode -->
                 <div class="example-box">
                     <div class="definition">
@@ -204,178 +243,430 @@
                     </div>
                 </div>
 
-                <!-- VAE Decode -->
-                <div class="example-box">
-                    <div class="definition">
-                        <strong>5. VAE Decode</strong> <span style="float:right">المحول (VAE Decode)</span>
+            </div>
+
+            <!-- KSampler (Advanced) / Dividing Steps -->
+            <div class="example-box" style="border: 2px dashed #6366f1; background: #eef2ff;">
+                <div class="definition">
+                    <strong>4b. Why is KSampler "Divided"? (Advanced)</strong>
+                    <span style="float:right">لماذا يتم تقسيم KSampler؟ (متقدم)</span>
+                </div>
+                <div class="lang-section en">
+                    <p>Sometimes you see <strong>KSampler (Advanced)</strong>. It lets you <strong>Split the
+                            steps</strong>.</p>
+                    <p><strong>Example (The Refiner Workflow):</strong></p>
+                    <ul>
+                        <li><strong>Sampler 1 (Base):</strong> Do steps 0 to 20 (Create the structure).</li>
+                        <li><strong>Sampler 2 (Refiner):</strong> Do steps 20 to 25 (Polish details).</li>
+                    </ul>
+                    <p>This is commonly used with <strong>SDXL Refiner</strong> to get better quality.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p>أحياناً تجد عقدة <strong>KSampler (Advanced)</strong>. إنها تسمح لك <strong>بتقسيم
+                            الخطوات</strong>.</p>
+                    <p><strong>مثال (سير عمل المصقل/Refiner):</strong></p>
+                    <ul>
+                        <li><strong>Sampler 1 (الأساسي):</strong> يقوم بالخطوات من 0 إلى 20 (لبناء الهيكل).</li>
+                        <li><strong>Sampler 2 (المصقل):</strong> يقوم بالخطوات من 20 إلى 25 (لتحسين التفاصيل).</li>
+                    </ul>
+                    <p>يستخدم هذا عادة مع <strong>SDXL Refiner</strong> للحصول على جودة أعلى.</p>
+                </div>
+            </div>
+
+            <!-- VAE Decode -->
+            <div class="example-box">
+                <div class="definition">
+                    <strong>5. VAE Decode</strong> <span style="float:right">المحول (VAE Decode)</span>
+                </div>
+                <div class="lang-section en">
+                    <p><strong>Latent -> Pixels.</strong> The "Latent" image looks like colorful noise to humans.
+                        The
+                        VAE Decode turns that noise into the final viewable image.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p><strong>من Latent إلى بكسل.</strong> صورة "Latent" تبدو مجرد ضوضاء ملونة لنا. هذه العقدة تحول
+                        تلك
+                        الضوضاء إلى الصورة النهائية التي نراها.</p>
+                </div>
+            </div>
+
+            <!-- VAE Loading Warning (New) -->
+            <div
+                style="margin-top: 20px; padding: 15px; border-left: 5px solid #f59e0b; background: #fffbeb; border-radius: 8px;">
+                <strong>⚠️ Weighted Note: Baked vs Loaded VAE</strong>
+                <div class="lang-section en">
+                    <p><strong>Scenario A (Checkpoints):</strong> Most models (e.g., Juggernaut, RealVision) have
+                        VAE
+                        Built-in ("Baked"). You DON'T need to load one separately.</p>
+                    <p><strong>Scenario B (UNETs):</strong> If you download a "Diffusion Model" or "UNET" alone, it
+                        is
+                        empty. You <strong>MUST</strong> add a <strong>"Load VAE"</strong> node and connect it to
+                        the
+                        VAE Decode.</p>
+                </div>
+                <div class="lang-section ar"
+                    style="border-right: none; border-top: 1px solid #fcd34d; padding-top: 10px; margin-top: 10px;">
+                    <p><strong>الحالة أ (Checkpoints):</strong> معظم الموديلات تأتي والـ VAE مدمج بداخلها. لا تحتاج
+                        لتحميله.</p>
+                    <p><strong>الحالة ب (UNETs):</strong> إذا قمت بتحميل موديل دفيوشن لوحده، فهو فارغ! يجب عليك
+                        إضافة
+                        عقدة <strong>"Load VAE"</strong> وتوصيلها يدوياً.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Suggested New Data (Dismissible) -->
+    <div id="suggestion-card" class="card"
+        style="border: 2px dashed #f59e0b; background-color: #fffbeb; position: relative;">
+        <button onclick="document.getElementById('suggestion-card').style.display='none'"
+            style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2em; color: #b45309;"
+            title="Dismiss">
+            ✖
+        </button>
+        <div class="card-header" style="background: none; border-bottom: 2px dashed #fcd34d;">
+            <span class="card-title" style="color: #b45309;">🚀 Suggested Next Topics</span>
+            <span class="card-title arabic-text" style="color: #b45309;">مواضيع مقترحة</span>
+        </div>
+        <div class="card-content">
+            <div class="lang-section en">
+                <p>To master ComfyUI, you should look into these next:</p>
+                <ul>
+                    <li><strong>Steps:</strong> How many times the AI "cleans" the noise. 20-30 is standard.</li>
+                    <li><strong>CFG Scale:</strong> "Creativity vs. Strictness".
+                        <ul>
+                            <li><strong>High (7-12):</strong> Sticks to the prompt more. Increases <strong>Contrast and
+                                    Details</strong>.</li>
+                            <li><strong>Low (1-6):</strong> More creative and softer, but might ignore parts of the
+                                prompt.</li>
+                        </ul>
+                    </li>
+
+                    <!-- New Sampler Menu Section -->
+                    <li><strong>Samplers (The Menu):</strong> Think of them like "Flavors" of drawing:
+                        <ul>
+                            <li><strong>Euler / Euler a:</strong> The "Fast Food". Fast, reliable, standard choice.
+                            </li>
+                            <li><strong>DPM++ 2M Karras:</strong> The "Gourmet". High quality, sharp details (User
+                                Favorite).</li>
+                            <li><strong>LCM:</strong> The "Speed Racer". Super fast (needs specific models).</li>
+                            <li><strong>Ancestral (has "a" in name):</strong> Adds random noise every step. Good for
+                                creativity, but the image changes if you add steps.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Denoise:</strong> How much the AI changes the original. 1.0 = Complete Change, 0.1 =
+                        Very Little Change. (This is "AI's Touch").</li>
+                    <li><strong>Seed:</strong> The specific "Random Number" used. Saving it allows you to recreate
+                        the exact same image.
+                        <ul>
+                            <li><strong>Control After Generate:</strong> Set to <strong>"Fixed"</strong> to keep the
+                                image. Set to <strong>"Increment"</strong> or <strong>"Randomize"</strong> to get a
+                                new
+                                one every time.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Workflows (.json):</strong> ComfyUI saves your entire setup as a JSON file. easy to
+                        share.</li>
+                </ul>
+                <div style="margin-top: 15px; padding: 10px; border-left: 4px solid #ef4444; background: #fff5f5;">
+                    <strong>⚠️ Dr. Note: The "Burn" Effect 🔥</strong>
+                    <p>Be careful with <strong>CFG Scale</strong>! If it's too high (> 10), images look "Fried".</p>
+                    <p><strong>Sweet Spot:</strong> Usually <strong>7.0 or 8.0</strong>, but <em>always check the
+                            Model
+                            Provider's page</em> (like on CivitAI) for their recommended number!</p>
+                </div>
+
+                <!-- Research Tip (Google/CivitAI) -->
+                <div class="example-box" style="border: 2px solid #0ea5e9; background: #e0f2fe;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <span style="font-size: 1.5em;">🔍</span>
+                        <div>
+                            <strong>Pro Tip: Don't Guess, Search!</strong>
+                            <span style="float:right">نصيحة محترف: لا تخمن، ابحث!</span>
+                        </div>
                     </div>
                     <div class="lang-section en">
-                        <p><strong>Latent -> Pixels.</strong> The "Latent" image looks like colorful noise to humans.
-                            The
-                            VAE Decode turns that noise into the final viewable image.</p>
+                        <p>How do you know the best <strong>CFG Scale</strong> or <strong>Steps</strong> for a specific
+                            model?</p>
+                        <p><strong>Google it!</strong> Search for: <code>[Model Name] best settings</code> or check the
+                            model's page on <strong>CivitAI</strong>.</p>
+                        <p>Every model is different. Some need CFG 7, others need CFG 2. The creator always writes the
+                            "Golden Settings" in the description.</p>
                     </div>
                     <div class="lang-section ar">
-                        <p><strong>من Latent إلى بكسل.</strong> صورة "Latent" تبدو مجرد ضوضاء ملونة لنا. هذه العقدة تحول
-                            تلك
-                            الضوضاء إلى الصورة النهائية التي نراها.</p>
+                        <p>كيف تعرف أفضل <strong>CFG Scale</strong> أو عدد <strong>Steps</strong> لموديل معين؟</p>
+                        <p><strong>ابحث في جوجل!</strong> ابحث عن: <code>[اسم الموديل] best settings</code> أو راجع صفحة
+                            الموديل على موقع <strong>CivitAI</strong>.</p>
+                        <p>كل موديل مختلف. البعض يحتاج CFG 7 والآخر يحتاج 2. صانع الموديل دائماً يكتب "الإعدادات
+                            الذهبية" في الوصف.</p>
                     </div>
                 </div>
 
-                <!-- VAE Loading Warning (New) -->
-                <div
-                    style="margin-top: 20px; padding: 15px; border-left: 5px solid #f59e0b; background: #fffbeb; border-radius: 8px;">
-                    <strong>⚠️ Weighted Note: Baked vs Loaded VAE</strong>
+                <!-- The Recipe for Cloning -->
+                <div class="example-box" style="border: 2px dashed #8b5cf6; background: #f5f3ff;">
+                    <div class="definition">
+                        <strong>⭐⭐ The Recipe for Cloning</strong>
+                        <span style="float:right">وصفة الاستنساخ</span>
+                    </div>
                     <div class="lang-section en">
-                        <p><strong>Scenario A (Checkpoints):</strong> Most models (e.g., Juggernaut, RealVision) have
-                            VAE
-                            Built-in ("Baked"). You DON'T need to load one separately.</p>
-                        <p><strong>Scenario B (UNETs):</strong> If you download a "Diffusion Model" or "UNET" alone, it
-                            is
-                            empty. You <strong>MUST</strong> add a <strong>"Load VAE"</strong> node and connect it to
-                            the
-                            VAE Decode.</p>
+                        <p>You said: "We can get the same of everything." <strong>YES!</strong></p>
+                        <p>To get the <strong>EXACT</strong> same image as someone else (like on CivitAI), you need the
+                            "Full Recipe":</p>
+                        <div
+                            style="text-align:center; font-weight:bold; margin:10px; padding:10px; background:white; border-radius:10px;">
+                            Prompt + Model + Settings (CFG/Steps) + <span style="color:#d97706;">SEED</span> = <span
+                                style="color:#16a34a;">SAME IMAGE</span>
+                        </div>
+                        <p>If you change even <strong>ONE</strong> number in the SEED, the whole image changes!</p>
                     </div>
-                    <div class="lang-section ar"
-                        style="border-right: none; border-top: 1px solid #fcd34d; padding-top: 10px; margin-top: 10px;">
-                        <p><strong>الحالة أ (Checkpoints):</strong> معظم الموديلات تأتي والـ VAE مدمج بداخلها. لا تحتاج
-                            لتحميله.</p>
-                        <p><strong>الحالة ب (UNETs):</strong> إذا قمت بتحميل موديل دفيوشن لوحده، فهو فارغ! يجب عليك
-                            إضافة
-                            عقدة <strong>"Load VAE"</strong> وتوصيلها يدوياً.</p>
+                    <div class="lang-section ar">
+                        <p>قلت: "يمكننا الحصول على نفس كل شيء." <strong>نعم!</strong></p>
+                        <p>للحصول على <strong>نفس الصورة بالضبط</strong> مثل شخص آخر (مثلاً على CivitAI)، تحتاج إلى
+                            "الوصفة الكاملة":</p>
+                        <div
+                            style="text-align:center; font-weight:bold; margin:10px; padding:10px; background:white; border-radius:10px;">
+                            النص + الموديل + الإعدادات + <span style="color:#d97706;">رقم الـ Seed</span> = <span
+                                style="color:#16a34a;">نفس الصورة</span>
+                        </div>
+                        <p>إذا غيرت رقماً <strong>واحداً</strong> فقط في الـ Seed، تتغير الصورة بالكامل!</p>
                     </div>
                 </div>
 
+                <!-- Deep Dive: Sampler vs Scheduler -->
+                <div class="card" style="border-left: 5px solid #06b6d4; margin-top: 20px;">
+                    <div class="card-header" style="background: #ecfeff;">
+                        <span class="card-title" style="color: #0891b2;">🧠 Deep Dive: Sampler vs. Scheduler</span>
+                        <span class="card-title arabic-text" style="color: #0891b2;">تعمق: الفرق بين Sampler و
+                            Scheduler</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="example-box" style="border: none; background: transparent; padding: 0;">
+                            <div class="lang-section en">
+                                <p>This is crucial for understanding <strong>how noise is removed</strong>.</p>
+                                <p>Imagine you are a sculptor carving a statue out of a block of stone (Noise).</p>
+
+                                <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                                    <div
+                                        style="flex: 1; min-width: 250px; background: white; padding: 15px; border-radius: 8px; border: 2px solid #3b82f6;">
+                                        <h4 style="color: #2563eb; margin-top: 0;">1. The Sampler (The Tool) 🔨</h4>
+                                        <p>This is the <strong>Specific Tool</strong> you use to hit the stone.</p>
+                                        <ul>
+                                            <li><strong>Euler:</strong> A simple hammer. Fast, reliable.</li>
+                                            <li><strong>DPM++:</strong> A laser cutter. Precise, high detail.</li>
+                                            <li><strong>Ancestral (a):</strong> A tool that adds a bit of dust (noise)
+                                                back while carving. Creates creativity.</li>
+                                        </ul>
+                                    </div>
+                                    <div
+                                        style="flex: 1; min-width: 250px; background: white; padding: 15px; border-radius: 8px; border: 2px solid #ec4899;">
+                                        <h4 style="color: #db2777; margin-top: 0;">2. The Scheduler (The Plan) 📅</h4>
+                                        <p>This is the <strong>Timetable</strong> of how hard you hit at each step.</p>
+                                        <ul>
+                                            <li><strong>Simple/Normal:</strong> Hit with the same force every time.</li>
+                                            <li><strong>Karras:</strong> Hit HARD at the start (remove big chunks), then
+                                                hit GENTLY at the end (polish details). <strong>(Best for
+                                                    realism)</strong>.</li>
+                                            <li><strong>Exponential:</strong> Start super fast, then slow down
+                                                drastically.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p
+                                    style="margin-top: 15px; font-weight: bold; text-align: center; background: #e0f2fe; padding: 10px; border-radius: 5px;">
+                                    So: "DPM++ 2M Karras" means: <br>
+                                    "Use the Laser Cutter (DPM) following the Karras Plan (Hard start, soft finish)."
+                                </p>
+                            </div>
+                            <div class="lang-section ar">
+                                <p>هذا أمر بالغ الأهمية لفهم <strong>كيفية إزالة الضوضاء</strong>.</p>
+                                <p>تخيل أنك نحات ينحت تمثالاً من كتلة صخرية (الضوضاء).</p>
+
+                                <div style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                                    <div
+                                        style="flex: 1; min-width: 250px; background: white; padding: 15px; border-radius: 8px; border: 2px solid #3b82f6;">
+                                        <h4 style="color: #2563eb; margin-top: 0;">1. الـ Sampler (الأداة) 🔨</h4>
+                                        <p>هذه هي <strong>الأداة المحددة</strong> التي تستخدمها لتكسير الصخر.</p>
+                                        <ul>
+                                            <li><strong>Euler:</strong> مطرقة بسيطة. سريعة وموثوقة.</li>
+                                            <li><strong>DPM++:</strong> قاطع ليزر. دقيق وتفاصيله عالية.</li>
+                                            <li><strong>Ancestral (a):</strong> أداة تضيف القليل من الغبار (ضوضاء) أثناء
+                                                النحت. تزيد الإبداع.</li>
+                                        </ul>
+                                    </div>
+                                    <div
+                                        style="flex: 1; min-width: 250px; background: white; padding: 15px; border-radius: 8px; border: 2px solid #ec4899;">
+                                        <h4 style="color: #db2777; margin-top: 0;">2. الـ Scheduler (الخطة) 📅</h4>
+                                        <p>هذا هو <strong>الجدول الزمني</strong> لقوة الضربة في كل خطوة.</p>
+                                        <ul>
+                                            <li><strong>Simple/Normal:</strong> اضرب بنفس القوة في كل مرة.</li>
+                                            <li><strong>Karras:</strong> اضرب بقوة في البداية (إزالة كتل كبيرة)، ثم اضرب
+                                                برفق في النهاية (تلميع التفاصيل). <strong>(الأفضل للواقعية)</strong>.
+                                            </li>
+                                            <li><strong>Exponential:</strong> ابدأ بسرعة فائقة، ثم أبطئ بشكل كبير.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p
+                                    style="margin-top: 15px; font-weight: bold; text-align: center; background: #e0f2fe; padding: 10px; border-radius: 5px;">
+                                    لذا: "DPM++ 2M Karras" تعني: <br>
+                                    "استخدم قاطع الليزر (DPM) باتباع خطة كاراس (بداية قوية، ونهاية ناعمة)."
+                                </p>
+                            </div>
+
+                            <!-- New Report Content: Table & Combos -->
+                            <div style="margin-top: 20px; border-top: 2px dashed #0891b2; padding-top: 20px;">
+                                <div class="lang-section en">
+                                    <h4 style="color: #0891b2;">🚀 Best Combinations (Recipes)</h4>
+                                    <ul>
+                                        <li><strong>Realism (Gold Standard):</strong> <code>DPM++ 2M</code> +
+                                            <code>Karras</code> (Balanced, Sharp).
+                                        </li>
+                                        <li><strong>Creative / Artistic:</strong> <code>Euler a</code> +
+                                            <code>Normal</code> (Adds randomness, good for art).
+                                        </li>
+                                        <li><strong>Speed:</strong> <code>LCM</code> + <code>Simple</code> (Super fast,
+                                            requires LCM model).</li>
+                                    </ul>
+                                    <table
+                                        style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white;">
+                                        <tr style="background: #e0f2fe;">
+                                            <th style="padding: 8px; border: 1px solid #7dd3fc;">Feature</th>
+                                            <th style="padding: 8px; border: 1px solid #7dd3fc;">Sampler 🔨</th>
+                                            <th style="padding: 8px; border: 1px solid #7dd3fc;">Scheduler 📅</th>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;"><strong>Role</strong>
+                                            </td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">The Worker / Tool</td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">The Manager / Plan</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">
+                                                <strong>Question</strong>
+                                            </td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">"How do I solve the
+                                                math?"</td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">"How much noise is
+                                                left?"</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="lang-section ar">
+                                    <h4 style="color: #0891b2;">🚀 أفضل التركيبات (وصفات جاهزة)</h4>
+                                    <ul>
+                                        <li><strong>للواقعية (المعيار الذهبي):</strong> استخدم <code>DPM++ 2M</code> +
+                                            <code>Karras</code> (متوازن ودقيق).
+                                        </li>
+                                        <li><strong>للفن والإبداع:</strong> استخدم <code>Euler a</code> +
+                                            <code>Normal</code> (يضيف عشوائية جميلة).
+                                        </li>
+                                        <li><strong>للسرعة:</strong> استخدم <code>LCM</code> + <code>Simple</code> (سريع
+                                            جداً، يحتاج موديل LCM).</li>
+                                    </ul>
+                                    <table
+                                        style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white; text-align: right;">
+                                        <tr style="background: #e0f2fe;">
+                                            <th style="padding: 8px; border: 1px solid #7dd3fc;">الميزة</th>
+                                            <th style="padding: 8px; border: 1px solid #7dd3fc;">Sampler 🔨</th>
+                                            <th style="padding: 8px; border: 1px solid #7dd3fc;">Scheduler 📅</th>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;"><strong>الدور</strong>
+                                            </td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">العامل / الأداة</td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">المدير / الخطة</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;"><strong>السؤال</strong>
+                                            </td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">"كيف أحل المعادلة؟"
+                                            </td>
+                                            <td style="padding: 8px; border: 1px solid #7dd3fc;">"كم بقي من الضوضاء؟"
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="lang-section ar">
+                <p>لاحتراف ComfyUI، تحقق من هذه المواضيع تالياً:</p>
+                <ul>
+                    <li><strong>Denoise (تقليل الضوضاء):</strong> مقدار تغيير الذكاء الاصطناعي للصورة الأصلية. 1.0 =
+                        تغيير كامل، 0.1 = تغيير بسيط جداً. (هذه هي "لمسة الذكاء الاصطناعي").</li>
+
+                    <!-- Arabic Sampler Menu -->
+                    <li><strong>Samplers (قائمة العينات):</strong> تخيلها مثل "نكهات" الرسم:
+                        <ul>
+                            <li><strong>Euler / Euler a:</strong> "الوجبة السريعة". سريع ومضمون. الخيار القياسي.
+                            </li>
+                            <li><strong>DPM++ 2M Karras:</strong> "المطعم الفاخر". جودة عالية وتفاصيل حادة (المفضل
+                                لدى المحترفين).</li>
+                            <li><strong>Ancestral (يحتوي حرف "a"):</strong> يضيف عشوائية في كل خطوة. جيد للإبداع،
+                                لكن الصورة تتغير إذا زدت الخطوات.</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Seed (البذرة):</strong> الرقم العشوائي المستخدم. حفظه يسمح لك بإعادة إنتاج نفس
+                        الصورة تماماً.
+                        <ul>
+                            <li><strong>التحكم بعد التوليد:</strong> اختر <strong>"Fixed"</strong> لتثبيت الصورة.
+                                اختر
+                                <strong>"Increment"</strong> أو <strong>"Randomize"</strong> للحصول على صورة جديدة
+                                كل
+                                مرة.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Workflows:</strong> يحفظ ComfyUI ترتيب العقد (Nodes) كملف JSON ليسهل مشاركته.</li>
+                </ul>
             </div>
         </div>
+    </div>
 
-        <!-- Suggested New Data (Dismissible) -->
-        <div id="suggestion-card" class="card"
-            style="border: 2px dashed #f59e0b; background-color: #fffbeb; position: relative;">
-            <button onclick="document.getElementById('suggestion-card').style.display='none'"
-                style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 1.2em; color: #b45309;"
-                title="Dismiss">
-                ✖
-            </button>
-            <div class="card-header" style="background: none; border-bottom: 2px dashed #fcd34d;">
-                <span class="card-title" style="color: #b45309;">🚀 Suggested Next Topics</span>
-                <span class="card-title arabic-text" style="color: #b45309;">مواضيع مقترحة</span>
-            </div>
-            <div class="card-content">
-                <div class="lang-section en">
-                    <p>To master ComfyUI, you should look into these next:</p>
-                    <ul>
-                        <li><strong>Steps:</strong> How many times the AI "cleans" the noise. 20-30 is standard.</li>
-                        <li><strong>CFG Scale:</strong> "Creativity vs. Obedience". Low (3-5) is creative, High (7-12)
-                            follows your prompt strictly.</li>
-
-                        <!-- New Sampler Menu Section -->
-                        <li><strong>Samplers (The Menu):</strong> Think of them like "Flavors" of drawing:
-                            <ul>
-                                <li><strong>Euler / Euler a:</strong> The "Fast Food". Fast, reliable, standard choice.
-                                </li>
-                                <li><strong>DPM++ 2M Karras:</strong> The "Gourmet". High quality, sharp details (User
-                                    Favorite).</li>
-                                <li><strong>LCM:</strong> The "Speed Racer". Super fast (needs specific models).</li>
-                                <li><strong>Ancestral (has "a" in name):</strong> Adds random noise every step. Good for
-                                    creativity, but the image changes if you add steps.</li>
-                            </ul>
-                        </li>
-
-                        <li><strong>Denoise:</strong> How much the AI changes the original. 1.0 = Complete Change, 0.1 =
-                            Very Little Change. (This is "AI's Touch").</li>
-                        <li><strong>Seed:</strong> The specific "Random Number" used. Saving it allows you to recreate
-                            the exact same image.
-                            <ul>
-                                <li><strong>Control After Generate:</strong> Set to <strong>"Fixed"</strong> to keep the
-                                    image. Set to <strong>"Increment"</strong> or <strong>"Randomize"</strong> to get a
-                                    new
-                                    one every time.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Workflows (.json):</strong> ComfyUI saves your entire setup as a JSON file. easy to
-                            share.</li>
-                    </ul>
-                    <div style="margin-top: 15px; padding: 10px; border-left: 4px solid #ef4444; background: #fff5f5;">
-                        <strong>⚠️ Dr. Note: The "Burn" Effect 🔥</strong>
-                        <p>Be careful with <strong>CFG Scale</strong>! If it's too high (> 10), images look "Fried".</p>
-                        <p><strong>Sweet Spot:</strong> Usually <strong>7.0 or 8.0</strong>, but <em>always check the
-                                Model
-                                Provider's page</em> (like on CivitAI) for their recommended number!</p>
-                    </div>
-                </div>
-                <div class="lang-section ar">
-                    <p>لاحتراف ComfyUI، تحقق من هذه المواضيع تالياً:</p>
-                    <ul>
-                        <li><strong>Denoise (تقليل الضوضاء):</strong> مقدار تغيير الذكاء الاصطناعي للصورة الأصلية. 1.0 =
-                            تغيير كامل، 0.1 = تغيير بسيط جداً. (هذه هي "لمسة الذكاء الاصطناعي").</li>
-
-                        <!-- Arabic Sampler Menu -->
-                        <li><strong>Samplers (قائمة العينات):</strong> تخيلها مثل "نكهات" الرسم:
-                            <ul>
-                                <li><strong>Euler / Euler a:</strong> "الوجبة السريعة". سريع ومضمون. الخيار القياسي.
-                                </li>
-                                <li><strong>DPM++ 2M Karras:</strong> "المطعم الفاخر". جودة عالية وتفاصيل حادة (المفضل
-                                    لدى المحترفين).</li>
-                                <li><strong>Ancestral (يحتوي حرف "a"):</strong> يضيف عشوائية في كل خطوة. جيد للإبداع،
-                                    لكن الصورة تتغير إذا زدت الخطوات.</li>
-                            </ul>
-                        </li>
-
-                        <li><strong>Seed (البذرة):</strong> الرقم العشوائي المستخدم. حفظه يسمح لك بإعادة إنتاج نفس
-                            الصورة تماماً.
-                            <ul>
-                                <li><strong>التحكم بعد التوليد:</strong> اختر <strong>"Fixed"</strong> لتثبيت الصورة.
-                                    اختر
-                                    <strong>"Increment"</strong> أو <strong>"Randomize"</strong> للحصول على صورة جديدة
-                                    كل
-                                    مرة.
-                                </li>
-                            </ul>
-                        </li>
-                        <li><strong>Workflows:</strong> يحفظ ComfyUI ترتيب العقد (Nodes) كملف JSON ليسهل مشاركته.</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Running and Maintenance (New Section) -->
+    <div class="card" style="border-left: 5px solid #ef4444;">
+        <div class="card-header">
+            <span class="card-title">Running & Maintenance ⚠️</span>
+            <span class="card-title arabic-text">التشغيل والصيانة</span>
         </div>
-
-        <!-- Running and Maintenance (New Section) -->
-        <div class="card" style="border-left: 5px solid #ef4444;">
-            <div class="card-header">
-                <span class="card-title">Running & Maintenance ⚠️</span>
-                <span class="card-title arabic-text">التشغيل والصيانة</span>
+        <div class="card-content">
+            <div class="lang-section en">
+                <ul>
+                    <li><strong>The Black Window (Console):</strong> When you run ComfyUI, a black window opens.
+                        <strong>DO NOT CLOSE IT!</strong> If you close it, the server stops.
+                    </li>
+                    <li><strong>Updating:</strong> To update, look for the <code>update_comfyui</code> script in
+                        your folder and run it.</li>
+                    <li><strong>Important Folders:</strong>
+                        <ul>
+                            <li><code>custom_nodes</code>: Where you install add-ons (Manager, ControlNet).</li>
+                            <li><code>input</code>: Put your images here for "Image-to-Image" tasks.</li>
+                            <li><code>output</code>: Where your generated images are saved.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-            <div class="card-content">
-                <div class="lang-section en">
-                    <ul>
-                        <li><strong>The Black Window (Console):</strong> When you run ComfyUI, a black window opens.
-                            <strong>DO NOT CLOSE IT!</strong> If you close it, the server stops.
-                        </li>
-                        <li><strong>Updating:</strong> To update, look for the <code>update_comfyui</code> script in
-                            your folder and run it.</li>
-                        <li><strong>Important Folders:</strong>
-                            <ul>
-                                <li><code>custom_nodes</code>: Where you install add-ons (Manager, ControlNet).</li>
-                                <li><code>input</code>: Put your images here for "Image-to-Image" tasks.</li>
-                                <li><code>output</code>: Where your generated images are saved.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="lang-section ar">
-                    <ul>
-                        <li><strong>الشاشة السوداء (الكونسول):</strong> عند تشغيل البرنامج، تظهر نافذة سوداء. <strong>لا
-                                تغلقها!</strong> إغلاقها يوقف البرنامج فوراً.</li>
-                        <li><strong>التحديث:</strong> لتحديث البرنامج، ابحث عن ملف <code>update_comfyui</code> في المجلد
-                            وشغله.</li>
-                        <li><strong>مجلدات مهمة:</strong>
-                            <ul>
-                                <li><code>custom_nodes</code>: لتثبيت الإضافات (مثل Manager).</li>
-                                <li><code>input</code>: ضع صورك هنا إذا أردت تعديلها (Image-to-Image).</li>
-                                <li><code>output</code>: المكان الذي تحفظ فيه صورك النهائية.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+            <div class="lang-section ar">
+                <ul>
+                    <li><strong>الشاشة السوداء (الكونسول):</strong> عند تشغيل البرنامج، تظهر نافذة سوداء. <strong>لا
+                            تغلقها!</strong> إغلاقها يوقف البرنامج فوراً.</li>
+                    <li><strong>التحديث:</strong> لتحديث البرنامج، ابحث عن ملف <code>update_comfyui</code> في المجلد
+                        وشغله.</li>
+                    <li><strong>مجلدات مهمة:</strong>
+                        <ul>
+                            <li><code>custom_nodes</code>: لتثبيت الإضافات (مثل Manager).</li>
+                            <li><code>input</code>: ضع صورك هنا إذا أردت تعديلها (Image-to-Image).</li>
+                            <li><code>output</code>: المكان الذي تحفظ فيه صورك النهائية.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -504,78 +795,82 @@
                     <p>أجهزة Mac و AMD تعمل، لكنها غالباً أبطأ أو أصعب في الإعداد.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- My Public Notes (Instructor Tips) -->
-        <div class="card" style="border-left: 5px solid #f59e0b;">
-            <div class="card-header">
-                <span class="card-title">My Personal Notes 📝</span>
-                <span class="card-title arabic-text">ملاحظاتي الشخصية</span>
-            </div>
-            <div class="card-content">
-                <div class="lang-section en">
-                    <p><strong>Tip 1:</strong> Always check the console if generation fails!</p>
-                    <p><strong>Tip 2:</strong> Start with small images (512x512) to test, then upscale.</p>
-                    <p><strong>Tip 3:</strong> <strong>ComfyUI Manager</strong> is essential! Install it by running `git
-                        clone` inside the `custom_nodes` folder.</p>
+            <!-- My Public Notes (Instructor Tips) -->
+            <div class="card" style="border-left: 5px solid #f59e0b;">
+                <div class="card-header">
+                    <span class="card-title">My Personal Notes 📝</span>
+                    <span class="card-title arabic-text">ملاحظاتي الشخصية</span>
                 </div>
-                <div class="lang-section ar">
-                    <p><strong>نصيحة 1:</strong> راقب دائماً الشاشة السوداء (الكونسول) إذا فشل التوليد!</p>
-                    <p><strong>نصيحة 2:</strong> ابدأ بتوليد صور صغيرة (512x512) للتجربة، ثم قم برفع جودتها لاحقاً.</p>
-                    <p><strong>نصيحة 3:</strong> إضافة <strong>ComfyUI Manager</strong> ضرورية جداً! ثبتها عن طريق أمر
-                        `git clone` داخل مجلد `custom_nodes`.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navigation Buttons -->
-        <div class="nav-buttons">
-            <a href="03_Generative_AI.html" class="btn-nav btn-prev">← Chapter 3</a>
-            <a href="05_ComfyUI_Manager.html" class="btn-nav btn-next">Chapter 5 →</a>
-        </div>
-
-        <!-- Language Settings -->
-        <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h3 style="margin: 0;">Language Settings 🌍</h3>
-                    <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
-                </div>
-                <div style="display: flex; gap: 20px;">
-                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                        <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
-                        English 🇺🇸
-                    </label>
-                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                        <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
-                        العربية 🇸🇦
-                    </label>
+                <div class="card-content">
+                    <div class="lang-section en">
+                        <p><strong>Tip 1:</strong> Always check the console if generation fails!</p>
+                        <p><strong>Tip 2:</strong> Start with small images (512x512) to test, then upscale.</p>
+                        <p><strong>Tip 3:</strong> <strong>ComfyUI Manager</strong> is essential! Install it by running
+                            `git
+                            clone` inside the `custom_nodes` folder.</p>
+                    </div>
+                    <div class="lang-section ar">
+                        <p><strong>نصيحة 1:</strong> راقب دائماً الشاشة السوداء (الكونسول) إذا فشل التوليد!</p>
+                        <p><strong>نصيحة 2:</strong> ابدأ بتوليد صور صغيرة (512x512) للتجربة، ثم قم برفع جودتها لاحقاً.
+                        </p>
+                        <p><strong>نصيحة 3:</strong> إضافة <strong>ComfyUI Manager</strong> ضرورية جداً! ثبتها عن طريق
+                            أمر
+                            `git clone` داخل مجلد `custom_nodes`.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="03_Generative_AI.html" class="btn-nav btn-prev">← Chapter 3</a>
+                <a href="05_ComfyUI_Manager.html" class="btn-nav btn-next">Chapter 5 →</a>
+            </div>
+
+            <!-- Language Settings -->
+            <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h3 style="margin: 0;">Language Settings 🌍</h3>
+                        <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <label
+                            style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                            <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
+                            English 🇺🇸
+                        </label>
+                        <label
+                            style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                            <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
+                            العربية 🇸🇦
+                        </label>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-    </div>
+        <!-- Persistent Language Script -->
+        <script>
+            const enCheckbox = document.getElementById('toggle-en');
+            const arCheckbox = document.getElementById('toggle-ar');
+            const body = document.body;
 
-    <!-- Persistent Language Script -->
-    <script>
-        const enCheckbox = document.getElementById('toggle-en');
-        const arCheckbox = document.getElementById('toggle-ar');
-        const body = document.body;
+            function applyLanguageSettings() {
+                const showEn = localStorage.getItem('show-en') !== 'false';
+                const showAr = localStorage.getItem('show-ar') !== 'false';
+                enCheckbox.checked = showEn;
+                arCheckbox.checked = showAr;
+                if (!showEn) body.classList.add('hide-en'); else body.classList.remove('hide-en');
+                if (!showAr) body.classList.add('hide-ar'); else body.classList.remove('hide-ar');
+            }
 
-        function applyLanguageSettings() {
-            const showEn = localStorage.getItem('show-en') !== 'false';
-            const showAr = localStorage.getItem('show-ar') !== 'false';
-            enCheckbox.checked = showEn;
-            arCheckbox.checked = showAr;
-            if (!showEn) body.classList.add('hide-en'); else body.classList.remove('hide-en');
-            if (!showAr) body.classList.add('hide-ar'); else body.classList.remove('hide-ar');
-        }
-
-        enCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-en', e.target.checked); applyLanguageSettings(); });
-        arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
-        applyLanguageSettings();
-    </script>
-    <script src="theme.js"></script>
+            enCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-en', e.target.checked); applyLanguageSettings(); });
+            arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
+            applyLanguageSettings();
+        </script>
+        <script src="theme.js"></script>
 </body>
 
 </html>

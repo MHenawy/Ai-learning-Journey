@@ -33,3 +33,14 @@
 | **Widget** | أداة إدخال | The input box/slider directly on the node |
 | **Input Slot** | منفذ الدخل | The connection point (dot) to wire data in |
 | **Type Casting** | تحويل النوع | Converting data from one type to another (e.g. Int to String) |
+| **Metadata** | البيانات الوصفية | Hidden data saved inside the image (contains the entire workflow) |
+| **OpenAI** | أوبن إيه آي | Creators of ChatGPT/DALL-E (Closed Source AI) |
+| **Flux** | فلكس | Advanced Open Source Model (2024), known for great text & realism |
+| **Diffusion Model** | نموذج الانتشار | The AI system that generates images. MUST work with a CLIP (Encoder) and VAE (Decoder). |
+| **KSampler (Advanced)** | العينات المتقدم | Allows splitting steps (Start/End) to use different models for the same image (Refiner). |
+| **Refiner** | المصقل | A secondary model used only for the final steps to add details/polish. |
+| **Subgraph (Components)** | سير عمل فرعي | A whole workflow compressed into a single node (Nested Workflow). |
+| **CivitAI** | موقع CivitAI | The biggest website for downloading Models and finding their best settings. |
+| **Sampler** | خوارزمية الرسم | The *Algorithm* (Tool) used to remove noise (e.g., Euler, DPM). |
+| **Scheduler** | والجدولة | The *Timetable* (Plan) controlling how much noise to remove at each step (e.g., Karras, Simple). |
+| **CFG Scale** | مقياس الالتزام (التباين) | How much the AI **sticks to the prompt**. Higher = More contrast & details. Lower = More creative. |

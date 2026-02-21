@@ -37,10 +37,17 @@
             </div>
             <div class="card-content">
                 <div class="lang-section en">
-                    <p><strong>Diffusion Models</strong> work by gradually adding noise to an image until it becomes pure static (forward diffusion), and then learning to reverse the process to generate new images from random noise guided by text (reverse diffusion). Models like <strong>Flux</strong> and <strong>Stable Diffusion</strong> use this technique to generate highly detailed images.</p>
+                    <p><strong>Diffusion Models</strong> work by gradually adding noise to an image until it becomes
+                        pure static (forward diffusion), and then learning to reverse the process to generate new images
+                        from random noise guided by text (reverse diffusion). Models like <strong>Flux</strong> and
+                        <strong>Stable Diffusion</strong> use this technique to generate highly detailed images.
+                    </p>
                 </div>
                 <div class="lang-section ar">
-                    <p>تعمل <strong>نماذج الانتشار</strong> (Diffusion Models) عن طريق إضافة تشويش للبيانات تدريجياً حتى تصبح ضبابية تماماً، ثم تتعلم كيفية عكس هذه العملية لتوليد صور جديدة من التشويش العشوائي باستخدام النصوص. نماذج مثل <strong>Flux</strong> و <strong>Stable Diffusion</strong> تستخدم هذه التقنية لتوليد صور عالية الدقة.</p>
+                    <p>تعمل <strong>نماذج الانتشار</strong> (Diffusion Models) عن طريق إضافة تشويش للبيانات تدريجياً حتى
+                        تصبح ضبابية تماماً، ثم تتعلم كيفية عكس هذه العملية لتوليد صور جديدة من التشويش العشوائي باستخدام
+                        النصوص. نماذج مثل <strong>Flux</strong> و <strong>Stable Diffusion</strong> تستخدم هذه التقنية
+                        لتوليد صور عالية الدقة.</p>
                 </div>
             </div>
         </div>
@@ -59,10 +66,14 @@
                         <strong>1. Image Masks (الماسكات)</strong>
                     </div>
                     <div class="lang-section en">
-                        <p>A <strong>Mask</strong> is a black-and-white layer over an image. In ComfyUI, you can paint a mask over an area you want to change. The AI will only regenerate the masked (painted) area and leave the rest of the image completely untouched.</p>
+                        <p>A <strong>Mask</strong> is a black-and-white layer over an image. In ComfyUI, you can paint a
+                            mask over an area you want to change. The AI will only regenerate the masked (painted) area
+                            and leave the rest of the image completely untouched.</p>
                     </div>
                     <div class="lang-section ar">
-                        <p><strong>القناع (Mask)</strong> هو طبقة باللونين الأبيض والأسود فوق الصورة. في برنامج ComfyUI، يمكنك رسم قناع فوق المنطقة التي تريد تغييرها. سيقوم الذكاء الاصطناعي بتوليد الجزء المحُدد بالقناع فقط وسيترك باقي الصورة كما هي بدون أي تغيير.</p>
+                        <p><strong>القناع (Mask)</strong> هو طبقة باللونين الأبيض والأسود فوق الصورة. في برنامج ComfyUI،
+                            يمكنك رسم قناع فوق المنطقة التي تريد تغييرها. سيقوم الذكاء الاصطناعي بتوليد الجزء المحُدد
+                            بالقناع فقط وسيترك باقي الصورة كما هي بدون أي تغيير.</p>
                     </div>
                 </div>
 
@@ -72,10 +83,13 @@
                         <strong>2. Flux Inpaint Models</strong>
                     </div>
                     <div class="lang-section en">
-                        <p>Specialized models like <code>flux1-fill-dev.safetensors</code> are fine-tuned specifically for inpainting. They understand the context of the surrounding unmasked image and seamlessly blend the new generated part into it.</p>
+                        <p>Specialized models like <code>flux1-fill-dev.safetensors</code> are fine-tuned specifically
+                            for inpainting. They understand the context of the surrounding unmasked image and seamlessly
+                            blend the new generated part into it.</p>
                     </div>
                     <div class="lang-section ar">
-                        <p>نماذج متخصصة مثل <code>flux1-fill-dev.safetensors</code> تم تدريبها خصيصاً للرسم الداخلي. إنها تفهم سياق الصورة المحيطة بالجزء غير المُقنع وتدمج الجزء الجديد المُولد بسلاسة تامة.</p>
+                        <p>نماذج متخصصة مثل <code>flux1-fill-dev.safetensors</code> تم تدريبها خصيصاً للرسم الداخلي.
+                            إنها تفهم سياق الصورة المحيطة بالجزء غير المُقنع وتدمج الجزء الجديد المُولد بسلاسة تامة.</p>
                     </div>
                 </div>
 
@@ -86,16 +100,22 @@
                     </div>
                     <div class="lang-section en">
                         <ul>
-                            <li><strong>Load Image:</strong> Where you upload your starting image. Right-click it and choose "Open in MaskEditor" to paint your mask.</li>
-                            <li><strong>VAE Encode (for Inpainting):</strong> This node takes your Image and your Mask, preparing both for the diffusion model.</li>
-                            <li><strong>Set Latent Noise Mask:</strong> Tells the model which exact pixels it is allowed to add noise to and redraw.</li>
+                            <li><strong>Load Image:</strong> Where you upload your starting image. Right-click it and
+                                choose "Open in MaskEditor" to paint your mask.</li>
+                            <li><strong>VAE Encode (for Inpainting):</strong> This node takes your Image and your Mask,
+                                preparing both for the diffusion model.</li>
+                            <li><strong>Set Latent Noise Mask:</strong> Tells the model which exact pixels it is allowed
+                                to add noise to and redraw.</li>
                         </ul>
                     </div>
                     <div class="lang-section ar">
                         <ul>
-                            <li><strong>تحميل الصورة (Load Image):</strong> حيث ترفع صورتك الأساسية. اضغط كليك يمين واختر "Open in MaskEditor" لرسم القناع (الماسك).</li>
-                            <li><strong>تحويل VAE للرسم الداخلي:</strong> هذه العقدة تأخذ صورتك والقناع، وتجهزهما لنموذج الانتشار.</li>
-                            <li><strong>Set Latent Noise Mask:</strong> تخبر النموذج بالبكسلات المحددة المسموح له بإضافة تشويش لها وإعادة رسمها.</li>
+                            <li><strong>تحميل الصورة (Load Image):</strong> حيث ترفع صورتك الأساسية. اضغط كليك يمين
+                                واختر "Open in MaskEditor" لرسم القناع (الماسك).</li>
+                            <li><strong>تحويل VAE للرسم الداخلي:</strong> هذه العقدة تأخذ صورتك والقناع، وتجهزهما لنموذج
+                                الانتشار.</li>
+                            <li><strong>Set Latent Noise Mask:</strong> تخبر النموذج بالبكسلات المحددة المسموح له بإضافة
+                                تشويش لها وإعادة رسمها.</li>
                         </ul>
                     </div>
                 </div>
@@ -111,50 +131,59 @@
             </div>
             <div class="card-content">
                 <div class="lang-section en">
-                    <p>When working with very high-resolution images, generating the entire image just to fix a small detail takes too much VRAM and time. This is where <strong>Inpaint Crop</strong> comes in.</p>
+                    <p>When working with very high-resolution images, generating the entire image just to fix a small
+                        detail takes too much VRAM and time. This is where <strong>Inpaint Crop</strong> comes in.</p>
                     <p>Using custom nodes like <code>comfyui-inpaint-cropand</code>:</p>
                     <ul>
-                        <li><strong>Inpaint Crop:</strong> Crops only the masked area (plus a small margin) from the high-res image. The AI then processes only this small, cropped piece quickly.</li>
-                        <li><strong>Inpaint Stitch:</strong> After the AI finishes drawing the cropped piece, this node stitches (pastes) it exactly back into its original place in the full high-res image seamlessly.</li>
+                        <li><strong>Inpaint Crop:</strong> Crops only the masked area (plus a small margin) from the
+                            high-res image. The AI then processes only this small, cropped piece quickly.</li>
+                        <li><strong>Inpaint Stitch:</strong> After the AI finishes drawing the cropped piece, this node
+                            stitches (pastes) it exactly back into its original place in the full high-res image
+                            seamlessly.</li>
                     </ul>
                 </div>
                 <div class="lang-section ar">
-                    <p>عند العمل مع صور عالية الدقة، إعادة توليد الصورة بالكامل لإصلاح تفصيل صغير يستهلك وقتاً وذاكرة (VRAM) كبيرة جداً. هنا يأتي دور <strong>قص الرسم الداخلي (Inpaint Crop)</strong>.</p>
+                    <p>عند العمل مع صور عالية الدقة، إعادة توليد الصورة بالكامل لإصلاح تفصيل صغير يستهلك وقتاً وذاكرة
+                        (VRAM) كبيرة جداً. هنا يأتي دور <strong>قص الرسم الداخلي (Inpaint Crop)</strong>.</p>
                     <p>باستخدام عقد مخصصة مثل <code>comfyui-inpaint-cropand</code>:</p>
                     <ul>
-                        <li><strong>قص الرسم الداخلي (Inpaint Crop):</strong> يقوم بقص المنطقة المحددة بالقناع فقط (مع هامش صغير) من الصورة الكبيرة. ثم يقوم الذكاء الاصطناعي بمعالجة هذه القطعة الصغيرة بسرعة.</li>
-                        <li><strong>دمج الرسم الداخلي (Inpaint Stitch):</strong> بعد أن ينتهي الذكاء الاصطناعي من رسم القطعة الصغيرة، تقوم هذه العقدة بدمجها (لصقها) بدقة في مكانها الأصلي داخل الصورة الكبيرة دون أي فواصل.</li>
+                        <li><strong>قص الرسم الداخلي (Inpaint Crop):</strong> يقوم بقص المنطقة المحددة بالقناع فقط (مع
+                            هامش صغير) من الصورة الكبيرة. ثم يقوم الذكاء الاصطناعي بمعالجة هذه القطعة الصغيرة بسرعة.
+                        </li>
+                        <li><strong>دمج الرسم الداخلي (Inpaint Stitch):</strong> بعد أن ينتهي الذكاء الاصطناعي من رسم
+                            القطعة الصغيرة، تقوم هذه العقدة بدمجها (لصقها) بدقة في مكانها الأصلي داخل الصورة الكبيرة دون
+                            أي فواصل.</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-    </div>
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="06_Copilot_and_Tools.html" class="btn-nav btn-prev">← Chapter 6</a>
+            <a href="index.html" class="btn-nav btn-next" style="background-color: var(--secondary-color);">Home 🏠</a>
+        </div>
 
-    <!-- Navigation Buttons -->
-    <div class="nav-buttons">
-        <a href="06_Copilot_and_Tools.html" class="btn-nav btn-prev">← Chapter 6</a>
-        <a href="index.html" class="btn-nav btn-next" style="background-color: var(--secondary-color);">Home 🏠</a>
-    </div>
-
-    <!-- Language Settings -->
-    <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-                <h3 style="margin: 0;">Language Settings 🌍</h3>
-                <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
-            </div>
-            <div style="display: flex; gap: 20px;">
-                <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                    <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
-                    English 🇺🇸
-                </label>
-                <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                    <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
-                    العربية 🇸🇦
-                </label>
+        <!-- Language Settings -->
+        <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0;">Language Settings 🌍</h3>
+                    <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
+                        English 🇺🇸
+                    </label>
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
+                        العربية 🇸🇦
+                    </label>
+                </div>
             </div>
         </div>
+
     </div>
 
     <!-- Persistent Language Script -->

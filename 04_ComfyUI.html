@@ -795,82 +795,81 @@
                     <p>أجهزة Mac و AMD تعمل، لكنها غالباً أبطأ أو أصعب في الإعداد.</p>
                 </div>
             </div>
-
-            <!-- My Public Notes (Instructor Tips) -->
-            <div class="card" style="border-left: 5px solid #f59e0b;">
-                <div class="card-header">
-                    <span class="card-title">My Personal Notes 📝</span>
-                    <span class="card-title arabic-text">ملاحظاتي الشخصية</span>
-                </div>
-                <div class="card-content">
-                    <div class="lang-section en">
-                        <p><strong>Tip 1:</strong> Always check the console if generation fails!</p>
-                        <p><strong>Tip 2:</strong> Start with small images (512x512) to test, then upscale.</p>
-                        <p><strong>Tip 3:</strong> <strong>ComfyUI Manager</strong> is essential! Install it by running
-                            `git
-                            clone` inside the `custom_nodes` folder.</p>
-                    </div>
-                    <div class="lang-section ar">
-                        <p><strong>نصيحة 1:</strong> راقب دائماً الشاشة السوداء (الكونسول) إذا فشل التوليد!</p>
-                        <p><strong>نصيحة 2:</strong> ابدأ بتوليد صور صغيرة (512x512) للتجربة، ثم قم برفع جودتها لاحقاً.
-                        </p>
-                        <p><strong>نصيحة 3:</strong> إضافة <strong>ComfyUI Manager</strong> ضرورية جداً! ثبتها عن طريق
-                            أمر
-                            `git clone` داخل مجلد `custom_nodes`.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation Buttons -->
-            <div class="nav-buttons">
-                <a href="03_Generative_AI.html" class="btn-nav btn-prev">← Chapter 3</a>
-                <a href="05_ComfyUI_Manager.html" class="btn-nav btn-next">Chapter 5 →</a>
-            </div>
-
-            <!-- Language Settings -->
-            <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <h3 style="margin: 0;">Language Settings 🌍</h3>
-                        <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
-                    </div>
-                    <div style="display: flex; gap: 20px;">
-                        <label
-                            style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                            <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
-                            English 🇺🇸
-                        </label>
-                        <label
-                            style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
-                            <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
-                            العربية 🇸🇦
-                        </label>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Persistent Language Script -->
-        <script>
-            const enCheckbox = document.getElementById('toggle-en');
-            const arCheckbox = document.getElementById('toggle-ar');
-            const body = document.body;
+        <!-- My Public Notes (Instructor Tips) -->
+        <div class="card" style="border-left: 5px solid #f59e0b;">
+            <div class="card-header">
+                <span class="card-title">My Personal Notes 📝</span>
+                <span class="card-title arabic-text">ملاحظاتي الشخصية</span>
+            </div>
+            <div class="card-content">
+                <div class="lang-section en">
+                    <p><strong>Tip 1:</strong> Always check the console if generation fails!</p>
+                    <p><strong>Tip 2:</strong> Start with small images (512x512) to test, then upscale.</p>
+                    <p><strong>Tip 3:</strong> <strong>ComfyUI Manager</strong> is essential! Install it by running
+                        `git
+                        clone` inside the `custom_nodes` folder.</p>
+                </div>
+                <div class="lang-section ar">
+                    <p><strong>نصيحة 1:</strong> راقب دائماً الشاشة السوداء (الكونسول) إذا فشل التوليد!</p>
+                    <p><strong>نصيحة 2:</strong> ابدأ بتوليد صور صغيرة (512x512) للتجربة، ثم قم برفع جودتها لاحقاً.
+                    </p>
+                    <p><strong>نصيحة 3:</strong> إضافة <strong>ComfyUI Manager</strong> ضرورية جداً! ثبتها عن طريق
+                        أمر
+                        `git clone` داخل مجلد `custom_nodes`.</p>
+                </div>
+            </div>
+        </div>
 
-            function applyLanguageSettings() {
-                const showEn = localStorage.getItem('show-en') !== 'false';
-                const showAr = localStorage.getItem('show-ar') !== 'false';
-                enCheckbox.checked = showEn;
-                arCheckbox.checked = showAr;
-                if (!showEn) body.classList.add('hide-en'); else body.classList.remove('hide-en');
-                if (!showAr) body.classList.add('hide-ar'); else body.classList.remove('hide-ar');
-            }
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="03_Generative_AI.html" class="btn-nav btn-prev">← Chapter 3</a>
+            <a href="05_ComfyUI_Manager.html" class="btn-nav btn-next">Chapter 5 →</a>
+        </div>
 
-            enCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-en', e.target.checked); applyLanguageSettings(); });
-            arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
-            applyLanguageSettings();
-        </script>
-        <script src="theme.js"></script>
+        <!-- Language Settings -->
+        <div class="card" style="margin-top: 40px; border-top: 5px solid var(--primary-color); padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h3 style="margin: 0;">Language Settings 🌍</h3>
+                    <p class="arabic-text" style="margin: 0; color: var(--text-muted);">إعدادات اللغة</p>
+                </div>
+                <div style="display: flex; gap: 20px;">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-en" checked style="width: 20px; height: 20px;">
+                        English 🇺🇸
+                    </label>
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <input type="checkbox" id="toggle-ar" checked style="width: 20px; height: 20px;">
+                        العربية 🇸🇦
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Persistent Language Script -->
+    <script>
+        const enCheckbox = document.getElementById('toggle-en');
+        const arCheckbox = document.getElementById('toggle-ar');
+        const body = document.body;
+
+        function applyLanguageSettings() {
+            const showEn = localStorage.getItem('show-en') !== 'false';
+            const showAr = localStorage.getItem('show-ar') !== 'false';
+            enCheckbox.checked = showEn;
+            arCheckbox.checked = showAr;
+            if (!showEn) body.classList.add('hide-en'); else body.classList.remove('hide-en');
+            if (!showAr) body.classList.add('hide-ar'); else body.classList.remove('hide-ar');
+        }
+
+        enCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-en', e.target.checked); applyLanguageSettings(); });
+        arCheckbox.addEventListener('change', (e) => { localStorage.setItem('show-ar', e.target.checked); applyLanguageSettings(); });
+        applyLanguageSettings();
+    </script>
+    <script src="theme.js"></script>
 </body>
 
 </html>
